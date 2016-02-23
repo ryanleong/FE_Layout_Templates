@@ -2,6 +2,7 @@ $mq-small-screen : '(max-width: 1200px)'
 $mq-tablets      : '(max-width: 992px)'
 $mq-phones       : '(max-width: 768px)'
 
+$header-height   : 50px
 $footer-height   : 50px
 
 /////////////////////////////////////////////
@@ -18,7 +19,7 @@ h3
     top: 50%
 
 #page-wrapper
-    min-height: calc(100vh - #{$footer-height})
+    min-height: calc(100vh - #{$header-height} - #{$footer-height})
     width: 100%
 
 /////////////////////////////////////////////
@@ -37,8 +38,8 @@ h3
         text-align: center
         li
             display: inline-block
-            margin: 0 10px
-            line-height: 50px
+            padding: 0 10px
+            height: 50px
 
 .container-fluid,
 .container,
@@ -53,7 +54,8 @@ h3
 
 .col
     display: inline-block
-    width: 32%
+    vertical-align: top
+    width: 33%
     padding: 0
 
 
@@ -71,11 +73,21 @@ h3
     .col
         width: 100%
 
+
+a.button
+    border: 1px solid #999
+    height: 40px
+    line-height: 38px
+    padding: 0 40px
+    border-radius: 6px
+    text-align: center
+
+
 .footer
     height: #{$footer-height}
 
 /////////////////////////////////////////////
 // MixIns
 /////////////////////////////////////////////
-=transition($duration)
+=transition($duration:"0.3s")
     transition: all #{$duration} ease-in-out
