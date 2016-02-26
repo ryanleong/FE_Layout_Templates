@@ -8,7 +8,7 @@ body *
 	background-size: 100%
 	background-position: center
 	box-sizing: border-box
-	transition: all 0.2s ease-in-out
+	transition: all 0.3s ease-in-out
 
 	text-transform: none
 	text-align: left
@@ -22,6 +22,9 @@ body *
 	&:focus
 		outline: none
 		outline-offset: initial
+
+	script, style
+		display: none
 
 
 html, body, div, span, applet, object, iframe,
@@ -55,6 +58,20 @@ body
 
 ol, ul
 	list-style: none
+
+	// Forces ul/li to default style
+	&.list-default
+		padding-left: 40px
+		list-style: initial
+		li
+			display: list-item
+
+// Any container with this class forces ul and li to default style
+*.list-default ul, *.list-default ol
+	padding-left: 40px
+	list-style: initial
+	li
+		display: list-item
 
 blockquote, q
 	quotes: none
