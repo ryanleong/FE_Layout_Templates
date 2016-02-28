@@ -1,6 +1,9 @@
 @import 'app-reset'
 @import 'layout-framework'
 
+$mq-small-screen : '(max-width: 1200px)'
+$mq-tablets      : '(max-width: 992px)'
+$mq-phones       : '(max-width: 768px)'
 
 /************************************/
 /*			GLOBAL STYLES			*/
@@ -22,10 +25,17 @@ body
 
         &:hover
             color: rgb(236, 86, 65)
+    svg
+        display: none
+        position: absolute
+        top: 20px
+        right: 35px
     ul
         text-align: right
         width: 80%
         float: left
+        li
+            line-height: 50px
 
 .hero
     background-color: rgb(182, 108, 255)
@@ -44,3 +54,22 @@ body
 .footer
     background-color: rgb(255, 170, 42)
     width: 100%
+
+
+@media #{$mq-phones}
+
+    .horizontal-nav
+        height: auto
+        padding: 0
+        .container
+            padding: 0
+        .logo
+            margin-left: 15px
+        svg
+            display: block
+        ul
+            width: 100%
+            background-color: #73CFFF
+            li
+                display: block
+                padding: 0 15px
