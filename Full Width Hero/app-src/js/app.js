@@ -12,6 +12,10 @@ $(document).ready(function() {
     setUpLightbox('.horizontal-nav ul li', '#main', openCallbackFn, closeCallbackFn);
 
 
+    // Default Stellar initialization
+    $.stellar();
+
+
     // Default WOW initialization
     wow = new WOW({
         boxClass: 'wow',
