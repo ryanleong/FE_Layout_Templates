@@ -1,4 +1,7 @@
 /************************************/
+/*             APP CSS              */
+/************************************/
+/************************************/
 /*			RESET GENERAL			*/
 /************************************/
 body * {
@@ -8,7 +11,6 @@ body * {
   background-size: 100%;
   background-position: center;
   box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
   text-transform: none;
   text-align: left;
   font-family: Arial, sans-serif;
@@ -136,6 +138,9 @@ select, select[multiple] {
   vertical-align: top;
 }
 
+/************************************/
+/*         LAYOUT FRAMEWORK         */
+/************************************/
 h1 {
   font-size: 50px;
 }
@@ -166,6 +171,61 @@ h3 {
 
 .show.visually-show {
   opacity: 1 !important;
+}
+
+input[type=month], input[type=week],
+input[type=date], input[type=datetime],
+input[type=time], input[type=datetime-local],
+input[type=email], input[type=password], input[type=tel],
+input[type=url], input[type=number], input[type=range],
+input[type=search], input[type=text], textarea {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=month]:focus, input[type=week]:focus,
+input[type=date]:focus, input[type=datetime]:focus,
+input[type=time]:focus, input[type=datetime-local]:focus,
+input[type=email]:focus, input[type=password]:focus, input[type=tel]:focus,
+input[type=url]:focus, input[type=number]:focus, input[type=range]:focus,
+input[type=search]:focus, input[type=text]:focus, textarea:focus {
+  border-color: #3FC3FF;
+}
+
+textarea {
+  min-height: 120px;
+  max-height: 120px;
+  height: 120px;
+  padding: 10px 20px;
+}
+
+.file-upload-container {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.file-upload-container input#file-upload[type="file"] {
+  width: 100%;
+  height: 38px;
+  opacity: 0;
+  z-index: 3;
+}
+
+.file-upload-container label {
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  right: 5px;
+  width: 120px;
+  border-radius: 6px;
+  background-color: #ccc;
+  line-height: 30px;
+  text-align: center;
 }
 
 .horizontal-nav {
@@ -205,6 +265,7 @@ h3 {
   z-index: 99;
   display: none;
   opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .lightbox svg {
@@ -340,6 +401,19 @@ body {
 
 .cb1 {
   background-color: #4dafff;
+}
+
+.cb2 {
+  height: 500px;
+}
+
+.cb2 h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cb2 .file-upload-container {
+  margin: 40px 0;
 }
 
 .footer {

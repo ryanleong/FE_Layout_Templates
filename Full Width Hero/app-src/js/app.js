@@ -2,14 +2,13 @@
 
 $(document).ready(function() {
 
-    var openCallbackFn = function() {
-        $('#main.lightbox .wrapper').css({ "height": "200px", "width": "200", "background-color": "#fff"});
-    };
-    var closeCallbackFn = function() {
-        $('#main.lightbox .wrapper').css({ "height": "0", "width": "0", "background-color": "#fff"});
-    };
-
-    setUpLightbox('.horizontal-nav ul li', '#main', openCallbackFn, closeCallbackFn);
+    setUpLightbox('.horizontal-nav .logo', '#main',
+        function() {
+            $('#main.lightbox .wrapper').css({ "height": "200px", "width": "200", "background-color": "#fff"});
+        },
+        function() {
+            $('#main.lightbox .wrapper').css({ "height": "0", "width": "0", "background-color": "#fff"});
+        });
 
 
     // Default Stellar initialization
