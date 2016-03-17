@@ -6,7 +6,7 @@ $mq-small-screen : '(max-width: 1200px)'
 $mq-tablets      : '(max-width: 992px)'
 $mq-phones       : '(max-width: 768px)'
 
-$header-height   : 50px
+$nav-height      : 50px
 $footer-height   : 50px
 
 /////////////////////////////////////////////
@@ -30,7 +30,7 @@ h3
 
 #page-wrapper
     min-height: calc(100vh - #{$footer-height})
-    // top: #{$header-height} // Use this if navigation is relative
+    // top: #{$nav-height} // Use this if navigation is relative
     width: 100%
 
 
@@ -100,7 +100,7 @@ textarea
 /////////////////////////////////////////////
 .horizontal-nav
     z-index: 10
-    height: 50px
+    height: $nav-height
     &.fixed
         position: fixed
         transform: translateX(-50%)
@@ -112,7 +112,7 @@ textarea
         li
             display: inline-block
             padding: 0 10px
-            height: 50px
+            height: $nav-height
 
 .lightbox
     position: fixed
@@ -150,11 +150,11 @@ textarea
     margin: 0 auto
     width: 1170px
 
-.col
+.col-custom
     display: inline-block
     vertical-align: top
-    width: 33%
     padding: 0
+    font-size: 0 /* To prevent spacing in between cols */
 
 
 @media #{$mq-small-screen}
@@ -163,21 +163,22 @@ textarea
 @media #{$mq-tablets}
     .container
         width: 750px
-    .col
+    .col-custom
         width: 49%
 @media #{$mq-phones}
     .container
         width: auto
-    .col
+    .col-custom
         width: 100%
 
 
 a.button
     border: 1px solid #999
     height: 40px
-    line-height: 38px
+    line-height: 40px
     padding: 0 40px
     border-radius: 6px
+    background-color: #fff
     text-align: center
 
 .footer
