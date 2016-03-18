@@ -43,3 +43,28 @@ function d(message) {
     if (!debug) { return; }
     console.log(message);
 }
+
+/*************************************
+ * ON RESIZE
+ *************************************/
+ function onResize() {
+     if (new Date() - rtime < delta) {
+         setTimeout(onResize, delta);
+     } else {
+         timeout = false;
+
+         // Do stuff
+     }               
+ }
+
+var rtime;
+var timeout = false;
+var delta = 200;
+$(window).on('resize', function() {
+    rtime = new Date();
+    if (timeout === false) {
+        timeout = true;
+        setTimeout(onResize, delta);
+    }
+});
+
