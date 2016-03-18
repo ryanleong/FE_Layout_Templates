@@ -1,3 +1,12 @@
+/*************************************
+ * GLOBAL VARIABLES
+ *************************************/
+var debug = true;
+
+
+/*************************************
+ * FUNCTIONS
+ *************************************/
 // Set up lightbox
 function setUpLightbox(openButtonName, lightboxID, openCallbackFn, closeCallbackFn) {
     $(openButtonName).click(function() {
@@ -27,4 +36,10 @@ function fadeOut(element) {
     $(element).one('transitionend', function(e) {
         $(element).removeClass('show');
     });
+}
+
+// Log function
+function d(message) {
+    if (!debug) { return; }
+    console.log(message);
 }
