@@ -1,20 +1,53 @@
-<h1 id="full-width-hero">Full Width hero</h1>
-<p>Template for full with hero.</p>
 <h1 id="layout-framework">Layout Framework</h1>
-<p>Mimics Twitter bootstrap basic functions.</p>
-<p>.horizontal-nav
-Creates Horizontal Navigation bar. Navigation will be 100% width.
-Use .container to add left/right margin.</p>
+<h3 id="css-libraries">CSS Libraries</h3>
+<p>These libraries have been converted to SASS and compiled into bootstrap.reset.css</p>
+<ul>
+<li>Reset CSS</li>
+<li>Normalize CSS</li>
+<li>Bootstrap (only grid system)</li>
+</ul>
+<p>These libraries have been converted to SASS to be imported</p>
+<ul>
+<li>Animate CSS</li>
+</ul>
+<h3 id="components">Components</h3>
+<h5 id="-horizontal-nav">.horizontal-nav</h5>
+<ul>
+<li>Creates Horizontal Navigation bar. Navigation will be 100% width.</li>
+<li>Use .container to add left/right margin.</li>
+</ul>
 <pre><code>&amp;.absolute
     Makes nav bar absolute
 
 &amp;.fixed
     Makes nav bar fixed
-</code></pre><p>.container-fluid
-Creates full width container</p>
-<p>.container
-Creates container that scales with margins to fight different screen sizes</p>
-<p>.col
-Creates columns divs side by side.
-Set your own width of each column (default width: 33%, assuming 3 cols).
-Set media queries for other screen sizes</p>
+</code></pre><h5 id="-col-custom">.col-custom</h5>
+<ul>
+<li>Creates columns divs side by side.</li>
+<li>Set your own width of each column</li>
+</ul>
+<h5 id="-show-visually-show">.show, .visually-show</h5>
+<ul>
+<li>Add these class 2 for fade in.</li>
+<li>Use setUpLightbox() to set up listeners.</li>
+</ul>
+<h5 id="-lightbox">.lightbox</h5>
+<ul>
+<li>Creates a lightbox.</li>
+<li>lightbox element has to be direct child of body</li>
+<li>lightbox element has to have class &quot;.lightbox&quot; and an ID</li>
+</ul>
+<pre><code>.lightbox#main
+</code></pre><ul>
+<li>Use setUpLightbox() function in JS to set up trigger and callbacks</li>
+</ul>
+<pre><code>setUpLightbox(&#39;triggerElement&#39;, &#39;lightboxID&#39;,
+    function() {
+        $(&#39;#main.lightbox .wrapper&#39;).css({ &quot;height&quot;: &quot;200px&quot;, &quot;width&quot;: &quot;200&quot;, &quot;background-color&quot;: &quot;#fff&quot;});
+    },
+    function() {
+        $(&#39;#main.lightbox .wrapper&#39;).css({ &quot;height&quot;: &quot;0&quot;, &quot;width&quot;: &quot;0&quot;, &quot;background-color&quot;: &quot;#fff&quot;});
+});
+</code></pre><h1 id="layouts-templates">Layouts Templates</h1>
+<h3 id="full-width-hero">Full Width hero</h3>
+<p>Template for full width conten block.</p>

@@ -13,20 +13,15 @@ html(lang="en")
 		//- INSERT FAVICON HERE
 
 		//- *********************** -//
-		//- 		CSS FILES 		-//
+		//- 	   CSS FILES 		-//
 		//- *********************** -//
 
-		//- CSS FILE: RESET
-		link(type='text/css', rel='stylesheet', media='all', href='assets/css/normalize.css')
 
-		//- CSS FILE: BOOTSTRAP
-		//- link(type='text/css', rel='stylesheet', media='all', href='assets/css/bootstrap.min.css')
+		//- CSS FILE: BOOTSTRAP AND RESET
+		link(type='text/css', rel='stylesheet', media='all', href='assets/css/bootstrap.reset.css')
 
 		//- CSS FILE: SWIPER
 		link(type='text/css', rel='stylesheet', media='all', href='assets/css/swiper.min.css')
-
-		//- CSS FILE: ANIMATION
-		link(type='text/css', rel='stylesheet', media='all', href='assets/css/animate.min.css')
 
 		//- CSS FILE: APP
 		link(type='text/css', rel='stylesheet', media='all', href='assets/css/app.css')
@@ -38,22 +33,20 @@ html(lang="en")
 
 
 
-
-
 	body
-		// Lightbox
+		//- Lightbox
 		.lightbox#main
 			.wrapper.vert-align
 			svg#close(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='-176.8 210.2 55.7 55.5', style='enable-background:new -176.8 210.2 55.7 55.5;', xml:space='preserve')
 				g
 					path(d='M-176,210.2c-0.1,0-0.1,0-0.1,0c-0.6,0.1-0.8,0.9-0.4,1.3l26.4,26.4l-26.4,26.4c-0.4,0.3-0.4,0.9-0.1,1.2 c0.3,0.3,0.9,0.3,1.2-0.1l26.5-26.4l26.5,26.4c0.3,0.4,0.8,0.4,1.2,0.1c0.3-0.3,0.3-0.9-0.1-1.2l-26.5-26.4l26.5-26.4 c0.5-0.5-0.1-1.5-0.7-1.3c-0.2,0-0.3,0.1-0.4,0.2l-26.5,26.4l-26.5-26.4C-175.6,210.3-175.8,210.2-176,210.2L-176,210.2z')
 
-		// Navigation
-		.horizontal-nav.absolute
+		//- Navigation
+		.horizontal-nav.fixed
 			.container
 				.logo
 					| logo
-					
+
 				svg#Untitled-2(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px', height='12px', viewbox='0 0 18 12', enable-background='new 0 0 18 12', xml:space='preserve')
 					path(fill='none')
 					g#Layer_x25_201
@@ -67,9 +60,17 @@ html(lang="en")
 					li Brochure
 					li About
 					li Contact
-					
+
+
+
+
+
+		//- Main Content
 		#page-wrapper
 			block page
+
+
+
 
 
 		.footer
@@ -88,20 +89,20 @@ html(lang="en")
 	//- JS FILE: GENERAL
 	script(src='assets/js/jquery-1.12.0.min.js')
 
+	//- JS FILE: WOW
+	script(src='assets/js/wow.min.js')
+
 	//- JS FILE: BOOTSTRAP
 	//- script(src='assets/js/bootstrap.min.js')
 
 	//- JS FILE: SWIPER
-	script(src='assets/js/swiper.min.js')
+	//- script(src='assets/js/swiper.min.js')
 
 	//- JS FILE: STELLAR
-	script(src='assets/js/jquery.stellar.min.js')
-
-	//- JS FILE: WOW
-	script(src='assets/js/wow.min.js')
+	//- script(src='assets/js/jquery.stellar.min.js')
 
 	//- JS FILE: READ MORE
-	script(src='assets/js/readmore.min.js')
+	//- script(src='assets/js/readmore.min.js')
 
 	//- JS FILE: APP
 	script(src='assets/js/app.js')

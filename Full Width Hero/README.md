@@ -1,13 +1,21 @@
-# Full Width hero
-Template for full with hero.
-
 
 # Layout Framework
-Mimics Twitter bootstrap basic functions.
+### CSS Libraries
+These libraries have been converted to SASS and compiled into bootstrap.reset.css
 
-.horizontal-nav
-Creates Horizontal Navigation bar. Navigation will be 100% width.
-Use .container to add left/right margin.
+- Reset CSS
+- Normalize CSS
+- Bootstrap (only grid system)
+
+These libraries have been converted to SASS to be imported
+- Animate CSS
+
+
+### Components
+##### .horizontal-nav
+- Creates Horizontal Navigation bar. Navigation will be 100% width.
+- Use .container to add left/right margin.
+
 
     &.absolute
         Makes nav bar absolute
@@ -15,18 +23,35 @@ Use .container to add left/right margin.
     &.fixed
         Makes nav bar fixed
 
+##### .col-custom
+- Creates columns divs side by side.
+- Set your own width of each column
 
-.container-fluid
-Creates full width container
+##### .show, .visually-show
+- Add these class 2 for fade in.
+- Use setUpLightbox() to set up listeners.
 
-.container
-Creates container that scales with margins to fight different screen sizes
 
-.col
-Creates columns divs side by side.
-Set your own width of each column (default width: 33%, assuming 3 cols).
-Set media queries for other screen sizes
+##### .lightbox
 
-.show .visually-show
-Add these class 2 for fade in.
-Use setUpLightbox() to set up listeners.
+- Creates a lightbox.
+- lightbox element has to be direct child of body
+- lightbox element has to have class ".lightbox" and an ID
+
+
+    .lightbox#main
+
+- Use setUpLightbox() function in JS to set up trigger and callbacks
+
+
+    setUpLightbox('triggerElement', 'lightboxID',
+        function() {
+            $('#main.lightbox .wrapper').css({ "height": "200px", "width": "200", "background-color": "#fff"});
+        },
+        function() {
+            $('#main.lightbox .wrapper').css({ "height": "0", "width": "0", "background-color": "#fff"});
+    });
+
+# Layouts Templates
+### Full Width hero
+Template for full width conten block.

@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 
     // Default Stellar initialization
-    $.stellar();
+    // $.stellar();
 
 
     // Default WOW initialization
@@ -24,4 +24,10 @@ $(document).ready(function() {
         live: true
     });
     wow.init();
+
+
 });
+
+function onResize() {
+    d('Resize Callback Triggered.');
+}
