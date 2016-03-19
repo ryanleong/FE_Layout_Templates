@@ -15,13 +15,16 @@ These libraries have been converted to SASS to be imported
 ##### .horizontal-nav
 - Creates Horizontal Navigation bar. Navigation will be 100% width.
 - Use .container to add left/right margin.
+- For Absolute
 
-```css
+```sass
 &.absolute
-    Makes nav bar absolute
+```
 
+- For Fixed
+
+```sass
 &.fixed
-    Makes nav bar fixed
 ```
 
 ##### .col-custom
@@ -39,7 +42,7 @@ These libraries have been converted to SASS to be imported
 - lightbox element has to be direct child of body
 - lightbox element has to have class ".lightbox" and an ID
 
-```
+```sass
 .lightbox#main
 ```
 
@@ -48,11 +51,12 @@ These libraries have been converted to SASS to be imported
 ```javascript
 setUpLightbox('triggerElement', 'lightboxID',
     function() {
-        $('#main.lightbox .wrapper').css({ "height": "200px", "width": "200", "background-color": "#fff"});
+    	// Open Lightbox Call back
     },
     function() {
-        $('#main.lightbox .wrapper').css({ "height": "0", "width": "0", "background-color": "#fff"});
-});
+    	// Close Lightbox Call back
+	}
+);
 ```
 
 # Layouts Templates
