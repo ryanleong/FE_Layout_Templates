@@ -47,14 +47,18 @@ function d(message) {
 /*************************************
  * ON RESIZE
  *************************************/
- function onResize() {
+ function onResizeCallBack() {
      if (new Date() - rtime < delta) {
-         setTimeout(onResize, delta);
+         setTimeout(onResizeCallBack, delta);
      } else {
          timeout = false;
 
-         // Do stuff
-     }               
+         // Create your onResize() function
+         try {
+            onResize();
+         }
+         catch(e) {}
+     }
  }
 
 var rtime;
@@ -64,7 +68,7 @@ $(window).on('resize', function() {
     rtime = new Date();
     if (timeout === false) {
         timeout = true;
-        setTimeout(onResize, delta);
+        setTimeout(onResizeCallBack, delta);
     }
 });
 

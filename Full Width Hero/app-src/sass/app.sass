@@ -1,92 +1,77 @@
 /************************************/
-/*             APP CSS              */
+/*            LIBRARIES             */
 /************************************/
+@import 'partials/animate'
 
-@import 'app-reset'
-@import 'layout-framework'
+// Framework by Ryan Leong
+@import 'partials/layout-framework'
 
-$mq-small-screen : '(max-width: 1200px)'
-$mq-tablets      : '(max-width: 992px)'
-$mq-phones       : '(max-width: 768px)'
 
 /************************************/
 /*			GLOBAL STYLES			*/
 /************************************/
 body
-    font-family: helvetica
-    font-size: 16px
+	font-family: helvetica
+	font-size: 16px
 
 
 /************************************/
 /*			BASIC STYLES			*/
 /************************************/
 .horizontal-nav
-    .logo
-        float: left
-        width: 20%
-        line-height: 50px
-        +transition(0.3s)
+	.logo
+		float: left
+		width: 20%
+		line-height: 50px
+		+transition(0.3s)
 
-        &:hover
-            color: rgb(236, 86, 65)
-    svg
-        display: none
-        position: absolute
-        top: 20px
-        right: 35px
-    ul
-        text-align: right
-        width: 80%
-        float: left
-        li
-            line-height: 50px
+		&:hover
+			color: rgb(236, 86, 65)
+	svg
+		display: none
+		position: absolute
+		top: 20px
+		right: 35px
+	ul
+		text-align: right
+		width: 80%
+		float: left
+		li
+			line-height: 50px
 
 .hero
-    background-color: rgb(182, 108, 255)
-    height: 400px
-    h1, h3
-        text-align: center
-    h1
-        margin-bottom: 40px
+	background-color: rgb(182, 108, 255)
+	height: 400px
+	h1, h3
+		text-align: center
+	h1
+		margin-bottom: 40px
 
 .container-fluid
-    background-color: rgb(43, 221, 185)
+	background-color: rgb(43, 221, 185)
 
 .cb1
-    background-color: rgb(77, 175, 255)
+	background-color: rgb(77, 175, 255)
 
-    .col-custom
-        width: 33%
-        font-size: 16px
+	.col-custom
+		width: 33%
+		font-size: 16px
+
 .cb2
-    height: 500px
+	height: 500px
 
-    h1
-        text-align: center
-        margin-bottom: 40px
+	h1
+		text-align: center
+		margin-bottom: 40px
 
-    .file-upload-container
-        margin: 40px 0
+	.file-upload-container
+		margin: 40px 0
 
 .footer
-    background-color: rgb(255, 170, 42)
-    width: 100%
+	background-color: rgb(255, 170, 42)
+	width: 100%
 
 
-@media #{$mq-phones}
 
-    .horizontal-nav
-        height: auto
-        padding: 0
-        .container
-            padding: 0
-        .logo
-            margin-left: 15px
-        svg
-            display: block
-        ul
-            width: 100%
-            background-color: #73CFFF
-            li
-                display: block
-                padding: 0 15px
+// Media Queries
+@import 'partials/media-queries'
