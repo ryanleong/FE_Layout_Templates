@@ -12,31 +12,22 @@ These libraries have been converted to SASS to be imported
 
 
 ### Components
-##### .horizontal-nav
+#### .horizontal-nav
 - Creates Horizontal Navigation bar. Navigation will be 100% width.
 - Use .container to add left/right margin.
-- For Absolute
+- For Absolute use '.absolute'
+- For Fixed use '.fixed'
 
-```sass
-&.absolute
-```
-
-- For Fixed
-
-```sass
-&.fixed
-```
-
-##### .col-custom
+#### .col-custom
 - Creates columns divs side by side.
 - Set your own width of each column
 
-##### .show, .visually-show
+#### .show, .visually-show
 - Add these class 2 for fade in.
 - Use setUpLightbox() to set up listeners.
 
 
-##### .lightbox
+#### .lightbox
 
 - Creates a lightbox.
 - lightbox element has to be direct child of body
@@ -59,6 +50,6 @@ setUpLightbox('triggerElement', 'lightboxID',
 );
 ```
 
-# Layouts Templates
+# Layout Templates
 ### Full Width hero
 Template for full width conten block.

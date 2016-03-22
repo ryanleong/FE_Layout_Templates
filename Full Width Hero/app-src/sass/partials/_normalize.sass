@@ -1,4 +1,6 @@
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**!
+ * normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css
+ */
 html
 	font-family: sans-serif
 	-ms-text-size-adjust: 100%
@@ -7,30 +9,37 @@ html
 body
 	margin: 0
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
 	display: block
 
 audio, canvas, progress, video
 	display: inline-block
-	vertical-align: baseline
 
 audio:not([controls])
 	display: none
 	height: 0
 
-[hidden], template
+progress
+	vertical-align: baseline
+
+template, [hidden]
 	display: none
 
 a
 	background-color: transparent
 	&:active, &:hover
-		outline: 0
+		outline-width: 0
 
 abbr[title]
-	border-bottom: 1px dotted
+	border-bottom: none
+	text-decoration: underline
+	text-decoration: underline dotted
 
 b, strong
-	font-weight: bold
+	font-weight: inherit
+
+b, strong
+	font-weight: bolder
 
 dfn
 	font-style: italic
@@ -40,98 +49,72 @@ h1
 	margin: 0.67em 0
 
 mark
-	background: #ff0
+	background-color: #ff0
 	color: #000
 
 small
 	font-size: 80%
 
-sub
+sub, sup
 	font-size: 75%
 	line-height: 0
 	position: relative
 	vertical-align: baseline
-
-sup
-	font-size: 75%
-	line-height: 0
-	position: relative
-	vertical-align: baseline
-	top: -0.5em
 
 sub
 	bottom: -0.25em
 
+sup
+	top: -0.5em
+
 img
-	border: 0
+	border-style: none
 
 svg:not(:root)
 	overflow: hidden
+
+code, kbd, pre, samp
+	font-family: monospace,monospace
+	font-size: 1em
 
 figure
 	margin: 1em 40px
 
 hr
-	-webkit-box-sizing: content-box
-	-moz-box-sizing: content-box
 	box-sizing: content-box
 	height: 0
+	overflow: visible
 
-pre
-	overflow: auto
-
-code, kbd, pre, samp
-	font-family: monospace, monospace
-	font-size: 1em
-
-button, input, optgroup, select, textarea
-	color: inherit
+button, input, select, textarea
 	font: inherit
+
+optgroup
+	font-weight: bold
+
+button, input, select
+	overflow: visible
+
+button, input, select, textarea
 	margin: 0
 
-button
-	overflow: visible
+button, select
 	text-transform: none
 
-select
-	text-transform: none
-
-button, html input[type="button"]
-	-webkit-appearance: button
+button, [type="button"], [type="reset"], [type="submit"]
 	cursor: pointer
 
-input
-	&[type="reset"], &[type="submit"]
-		-webkit-appearance: button
-		cursor: pointer
-
-button[disabled], html input[disabled]
+[disabled]
 	cursor: default
 
-button::-moz-focus-inner
+button, html [type="button"], [type="reset"], [type="submit"]
+	-webkit-appearance: button
+
+button::-moz-focus-inner, input::-moz-focus-inner
 	border: 0
 	padding: 0
 
-input
-	&::-moz-focus-inner
-		border: 0
-		padding: 0
-	line-height: normal
-	&[type="checkbox"], &[type="radio"]
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
-		padding: 0
-	&[type="number"]
-		&::-webkit-inner-spin-button, &::-webkit-outer-spin-button
-			height: auto
-	&[type="search"]
-		-webkit-appearance: textfield
-		-webkit-box-sizing: content-box
-		-moz-box-sizing: content-box
-		box-sizing: content-box
-		&::-webkit-search-cancel-button, &::-webkit-search-decoration
-			-webkit-appearance: none
+button:-moz-focusring, input:-moz-focusring
+	outline: 1px dotted ButtonText
 
 fieldset
 	border: 1px solid #c0c0c0
@@ -139,19 +122,25 @@ fieldset
 	padding: 0.35em 0.625em 0.75em
 
 legend
-	border: 0
+	box-sizing: border-box
+	color: inherit
+	display: table
+	max-width: 100%
 	padding: 0
+	white-space: normal
 
 textarea
 	overflow: auto
 
-optgroup
-	font-weight: bold
-
-table
-	border-collapse: collapse
-	border-spacing: 0
-
-td, th
+[type="checkbox"], [type="radio"]
+	box-sizing: border-box
 	padding: 0
 
+[type="number"]
+	&::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+		height: auto
+
+[type="search"]
+	-webkit-appearance: textfield
+	&::-webkit-search-cancel-button, &::-webkit-search-decoration
+		-webkit-appearance: none
