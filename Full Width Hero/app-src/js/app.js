@@ -11,8 +11,10 @@ $(document).ready(function() {
         });
 
 
-    // Default Stellar initialization
-    // $.stellar();
+    // Default Stellar initialization   
+    // $('body').imagesLoaded( function() {
+    //     $.stellar();
+    // });
 
 
     // Default WOW initialization
