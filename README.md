@@ -50,6 +50,15 @@ setUpLightbox('triggerElement', 'lightboxID',
 );
 ```
 
+- Use setUpResponsiveNav() function in JS to set up responsive navigation animations
+
+```javascript
+setUpResponsiveNav({
+    "animation": "slideDown | slideInLeft | slideInRight",
+    "width": "% | px",
+});
+```
+
 # Layout Templates
 ### Full Width hero
 Template for full width conten block.

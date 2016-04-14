@@ -5,6 +5,42 @@ var debug = true;
 
 
 /*************************************
+ * Responsive Navigation
+ *
+ * Example
+ * options = {
+ *     "animation": "slideDown | slideInLeft | slideInRight",
+ *     "width": "% | px"
+ * }
+ *
+ * animation - Type of Animation
+ * width - width of menu
+ *************************************/
+ function setUpResponsiveNav(options) {
+
+    // Set class for animation type
+    $('.horizontal-nav .menu').addClass(options.animation);
+
+    // Set width of menu
+    $('.horizontal-nav .menu').css({
+        "width" : options.width
+    });
+
+    // On hamburger click
+    $('#hamburger').click(function(){
+        // Animate hamburger to close
+        $(this).toggleClass('open');
+
+        if (options.animation == "slideDown") {
+            $('.horizontal-nav .menu').slideToggle();
+        }
+        else {
+            $('.horizontal-nav .menu').toggleClass("open");
+        }
+    });
+ }
+
+/*************************************
  * LIGHTBOX
  *************************************/
 function setUpLightbox(openButtonName, lightboxID, openCallbackFn, closeCallbackFn) {

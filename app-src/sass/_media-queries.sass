@@ -6,21 +6,48 @@
 @media #{$mq-xs-481-768}
 
 	.horizontal-nav
-		height: auto
 		padding: 0
-		.container
-			padding: 0
-		.logo
-			margin-left: 15px
-		svg
+		.logo, .menu
 			display: block
-		ul
 			width: 100%
-			background-color: #73CFFF
+			padding: 0 15px
+		
+		#hamburger
+			display: block
+
+		.menu
+			display: none
+			height: auto
+			overflow: hidden
+			position: absolute
+
+			&.slideInLeft
+				display: block
+				left: -100%
+				+transition('0.5s')
+
+				&.open
+					left: 0
+
+			&.slideInRight
+				display: block
+				right: -100%
+				+transition('0.5s')
+
+				&.open
+					right: 0
+
+
+		ul
+			transform: none
+			top: 0
 			li
 				display: block
-				padding: 0 15px
+				margin: 0
+				height: 40px
 
+				a
+					+v-align
 
 @media #{$mq-xxs-376-480}
 

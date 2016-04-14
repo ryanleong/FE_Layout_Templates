@@ -33,30 +33,33 @@ html(lang="en")
 	body
 		//- Lightbox
 		.lightbox#main
-			.wrapper.vert-align
+			.wrapper.v-align
 			svg#close(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='-176.8 210.2 55.7 55.5', style='enable-background:new -176.8 210.2 55.7 55.5;', xml:space='preserve')
 				g
 					path(d='M-176,210.2c-0.1,0-0.1,0-0.1,0c-0.6,0.1-0.8,0.9-0.4,1.3l26.4,26.4l-26.4,26.4c-0.4,0.3-0.4,0.9-0.1,1.2 c0.3,0.3,0.9,0.3,1.2-0.1l26.5-26.4l26.5,26.4c0.3,0.4,0.8,0.4,1.2,0.1c0.3-0.3,0.3-0.9-0.1-1.2l-26.5-26.4l26.5-26.4 c0.5-0.5-0.1-1.5-0.7-1.3c-0.2,0-0.3,0.1-0.4,0.2l-26.5,26.4l-26.5-26.4C-175.6,210.3-175.8,210.2-176,210.2L-176,210.2z')
 
 		//- Navigation
 		.horizontal-nav.fixed
-			.container
-				.logo
-					| logo
 
-				svg#Untitled-2(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px', height='12px', viewbox='0 0 18 12', enable-background='new 0 0 18 12', xml:space='preserve')
-					path(fill='none')
-					g#Layer_x25_201
-						rect(width='18', height='2')
-						rect(y='5', width='18', height='2')
-						rect(y='10', width='18', height='2')
-					path(fill='none')
+			.logo
+				| logo
 
+			#hamburger
+				span
+				span
+				span
+				span
+
+			.menu
 				ul
-					li Home
-					li Brochure
-					li About
-					li Contact
+					li
+						a Home
+					li
+						a Brochure
+					li
+						a About
+					li
+						a Contact
 
 
 

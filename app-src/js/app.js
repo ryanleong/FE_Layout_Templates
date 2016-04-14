@@ -2,13 +2,26 @@
 
 $(document).ready(function() {
 
-    setUpLightbox('.horizontal-nav .logo', '#main',
+
+    //////////////////////////////////////////
+    // Examples Start
+    //////////////////////////////////////////
+    setUpResponsiveNav({
+        "animation": "slideInRight",
+        "width": "80%",
+    });
+
+    setUpLightbox('.horizontal-nav .menu li:first-child', '#main',
         function() {
             $('#main.lightbox .wrapper').css({ "height": "200px", "width": "200", "background-color": "#fff"});
         },
         function() {
             $('#main.lightbox .wrapper').css({ "height": "0", "width": "0", "background-color": "#fff"});
         });
+    //////////////////////////////////////////
+    // Examples End
+    //////////////////////////////////////////
+
 
 
     // Default Stellar initialization   
@@ -31,5 +44,5 @@ $(document).ready(function() {
 });
 
 function onResize() {
-    d('Resize Callback Triggered.');
+    // Resize Callback Triggered
 }
