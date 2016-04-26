@@ -50,6 +50,9 @@ setUpLightbox('triggerElement', 'lightboxID',
 );
 ```
 
+#### .horizontal-nav
+- Creates Horizontal Navigation
+- Add ".fixed" or ".absolute" to make them fixed or absoluted
 - Use setUpResponsiveNav() function in JS to set up responsive navigation animations
 
 ```javascript
@@ -58,6 +61,11 @@ setUpResponsiveNav({
     "width": "% | px",
 });
 ```
+
+#### #map
+- Creates a div containing Google Maps
+- initMap() is used
+- initMap() is the callback for the Google Maps API
 
 # Layout Templates
 ### Full Width hero

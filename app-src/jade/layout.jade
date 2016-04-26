@@ -106,3 +106,7 @@ html(lang="en")
 
 	//- JS FILE: APP
 	script(src='assets/js/app.js')
+	
+	//- JS FILE: GOOGLE MAPS
+	//- Has to be after main JS file as init function resides there
+	script(src="https://maps.googleapis.com/maps/api/js?callback=initMap", async, defer)
