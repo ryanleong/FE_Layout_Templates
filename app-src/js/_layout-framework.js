@@ -1,7 +1,15 @@
 /*************************************
  * GLOBAL VARIABLES
  *************************************/
-var debug = true;
+
+
+/*************************************
+ * -1 - No messages
+ * 0  - All Messages
+ * 1  - Error Messages
+ * 2  - Info Messages
+ *************************************/
+var debug = 2;
 
 
 /*************************************
@@ -84,9 +92,15 @@ function fadeOut(element) {
 /*************************************
  * LOG FUNCTION
  *************************************/
-function d(message) {
-    if (!debug) { return; }
-    console.log(message);
+function d(errorType, message) {
+    if (debug < 0) { return; }
+
+    if (debug === 0) { console.log(message); }
+
+    if ((debug === 1 && errorType == "error") ||
+        (debug === 2 && errorType == "info")) { 
+        console.log(message);
+    }
 }
 
 /*************************************

@@ -1,13 +1,11 @@
 
 # Layout Framework
 ### CSS Libraries
-These libraries have been converted to SASS and compiled into bootstrap.reset.css
 
+These libraries have been converted to SASS to be imported
 - Reset CSS
 - Normalize CSS
 - Bootstrap (only grid system)
-
-These libraries have been converted to SASS to be imported
 - Animate CSS
 
 

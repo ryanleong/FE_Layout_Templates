@@ -40,7 +40,8 @@ $(document).ready(function() {
     });
     wow.init();
 
-
+    d('error', 'error message');
+    d('info', 'info message');
 });
 
 function onResize() {
@@ -56,7 +57,22 @@ function initMap() {
     // Map Options
     var map = new google.maps.Map(mapDiv, {
         center: {lat: 44.540, lng: -78.546},
-        zoom: 8
+        zoom: 8,
+        // disableDefaultUI: true,
+        // fullscreenControl: true,
+        // fullscreenControlOptions: {
+        //     position: google.maps.ControlPosition.RIGHT_BOTTOM
+        // },
+        // mapTypeControl: true,
+        // mapTypeControlOptions: {
+        //     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        //     mapTypeIds: [
+        //         google.maps.MapTypeId.ROADMAP,
+        //         google.maps.MapTypeId.TERRAIN,
+        //         google.maps.MapTypeId.HYBRID,
+        //         google.maps.MapTypeId.SATELLITE,
+        //     ]
+        // }
     });
 
     // Map Style
