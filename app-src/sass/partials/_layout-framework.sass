@@ -2,27 +2,8 @@
 /*         LAYOUT FRAMEWORK         */
 /************************************/
 
-$mq-md-993-1200: '(max-width: 1200px)'
-$mq-sm-769-992: '(max-width: 992px)'
-$mq-xs-481-768: '(max-width: 768px)'
-$mq-xxs-376-480: '(max-width: 480px)'
-$mq-xxxs-min-375: '(max-width: 375px)'
-
-$nav-height      : 50px
-$footer-height   : 50px
-
 /////////////////////////////////////////////
-// MixIns
-/////////////////////////////////////////////
-=transition($duration:"0.3s")
-	transition: all #{$duration} ease-in-out
-
-=v-align($topValue:"50%")
-	transform: translateY(-50%)
-	top: #{$topValue}
-
-/////////////////////////////////////////////
-// Global
+// Global Styles
 /////////////////////////////////////////////
 #page-wrapper
 	min-height: calc(100vh - #{$footer-height})
@@ -98,6 +79,8 @@ a.button
 	text-align: center
 	cursor: pointer
 
+img
+	width: 100%
 
 /////////////////////////////////////////////
 // Items

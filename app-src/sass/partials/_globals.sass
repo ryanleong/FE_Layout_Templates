@@ -1,0 +1,23 @@
+/////////////////////////////////////////////
+// SASS Globals
+/////////////////////////////////////////////
+$nav-height      : 50px
+$footer-height   : 50px
+
+$mq-md-992-1199: '(max-width: 1199px)'
+$mq-sm-768-991: '(max-width: 991px)'
+$mq-xs-480-767: '(max-width: 767px)'
+$mq-xxs-375-479: '(max-width: 479px)'
+$mq-xxxs-min-374: '(max-width: 374px)'
+
+/////////////////////////////////////////////
+// MixIns
+/////////////////////////////////////////////
+=transition($duration:"0.3s", $delay:"0s")
+	transition: all #{$duration} ease-in-out
+	transition-delay: #{$delay}
+
+=v-align($topValue:"50%")
+	transform: translateY(-50%)
+	top: #{$topValue}
+
