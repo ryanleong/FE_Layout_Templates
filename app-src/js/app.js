@@ -25,9 +25,9 @@ $(document).ready(function() {
 
 
     // Default Stellar initialization   
-    // $('body').imagesLoaded( function() {
-    //     $.stellar();
-    // });
+    $('body').imagesLoaded( function() {
+        $.stellar();
+    });
 
 
     // Default WOW initialization

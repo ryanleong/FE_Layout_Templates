@@ -94,21 +94,6 @@ function fadeOut(element) {
     });
 }
 
-/*************************************
- * LOG FUNCTION
- *************************************/
-function d(errorType, message) {
-    if (debug < 0) { return; }
-
-    if (debug === 0) { console.log(message); }
-
-    if ((debug === 1 && errorType == "error") ||
-        (debug === 2 && errorType == "info")) { 
-        console.log(message);
-    }
-}
-
-
  /**
   * Executes onResize() function on resize end.
   * @return none
