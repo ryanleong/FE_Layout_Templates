@@ -40,8 +40,6 @@ $(document).ready(function() {
     });
     wow.init();
 
-    d('error', 'error message');
-    d('info', 'info message');
 });
 
 function onResize() {
