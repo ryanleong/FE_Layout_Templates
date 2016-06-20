@@ -57,6 +57,13 @@ body
 		height: 600px
 
 .footer
+	height: #{$footer-height}
 	background-color: rgb(255, 170, 42)
 	width: 100%
 
+	& > .container
+		+v-align
+
+
+// Import Swiper CSS
+@import 'partials/swiper'

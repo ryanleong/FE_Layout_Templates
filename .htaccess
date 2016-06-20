@@ -9,7 +9,7 @@ RewriteEngine On
 #ErrorDocument 404 /dir/404.html
 
 
-
+# https://gtmetrix.com/add-expires-headers.html
 <IfModule mod_expires.c>
 
 # Enable expirations
@@ -37,6 +37,7 @@ ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
 
 
+# https://stackoverflow.com/questions/12367858/how-can-i-get-apache-gzip-compression-to-work
 ####################
 # GZIP COMPRESSION #
 ####################

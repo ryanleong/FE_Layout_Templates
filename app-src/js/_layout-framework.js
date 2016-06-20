@@ -2,16 +2,6 @@
  * GLOBAL VARIABLES
  *************************************/
 
-
-/*************************************
- * -1 - No messages
- * 0  - All Messages
- * 1  - Error Messages
- * 2  - Info Messages
- *************************************/
-var debug = 2;
-
-
 /**
 * Set up a responsive navigation
 * @param {Object} options [animation options for responsive]
@@ -94,23 +84,23 @@ function fadeOut(element) {
     });
 }
 
- /**
-  * Executes onResize() function on resize end.
-  * @return none
-  */
- function onResizeCallBack() {
-     if (new Date() - rtime < delta) {
-         setTimeout(onResizeCallBack, delta);
-     } else {
-         timeout = false;
+/**
+ * Executes onResize() function on resize end.
+ * @return none
+*/
+function onResizeCallBack() {
+    if (new Date() - rtime < delta) {
+        setTimeout(onResizeCallBack, delta);
+    } else {
+        timeout = false;
 
-         // Create your onResize() function
-         try {
+        // Create your onResize() function
+        try {
             onResize();
-         }
-         catch(e) {}
-     }
- }
+        }
+        catch(e) {}
+    }
+}
 
 var rtime;
 var timeout = false;
