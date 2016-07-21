@@ -83,6 +83,29 @@ a.button
 img
 	width: 100%
 
+
+/////////////////////////////////////////////
+// Used to simulate background-size: cover
+/////////////////////////////////////////////
+.cover-wrap
+	position: fixed
+	top: -50%
+	left: -50%
+	width: 200%
+	height: 200%
+
+	.cover
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+		min-width: 50%
+		min-height: 50%
+		overflow-x: hidden
+
+
 /////////////////////////////////////////////
 // Items
 /////////////////////////////////////////////
@@ -194,12 +217,11 @@ img
 		margin: 0 auto
 
 
-.col-custom
-	display: inline-block
-	vertical-align: top
-	padding: 0
-	font-size: 0 /* To prevent spacing in between cols */
+.sticky-nav
+	position: absolute
 
+	&.stuck
+		position: fixed
 
 /////////////////////////////////////////////
 // Loading Animations
