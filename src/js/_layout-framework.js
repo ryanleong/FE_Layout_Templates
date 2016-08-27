@@ -167,6 +167,21 @@ function animiateScrollTo(eleToScroll, eleToScrollTo, speed, offset) {
 }
 
 
+/**
+ * Initialize all swipers.
+ * Settings must be present in an array of objects.
+ * @return {[type]} [description]
+ */
+function initSwiper() {
+    if (typeof swiperSettings !== 'undefined') {
+        for (var i = 0; i < swiperSettings.length; i++) {
+
+            new Swiper(swiperSettings[i].class, swiperSettings[i].settings);
+
+        }
+    }
+}
+
 
 /**
  * Adds class to a set of DOM elements in succession. (E.g. Fade in animations)
