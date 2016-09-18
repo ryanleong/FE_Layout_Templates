@@ -8,22 +8,14 @@ These libraries have been converted to SASS to be imported
 - Bootstrap (only grid system)
 - Animate CSS
 
+### JS Libraries
+- jQuery 2.2.4
+- Swiper
+. WOW
+- jQuery ImagesLoaded
+
 
 ### Components
-#### .horizontal-nav
-- Creates Horizontal Navigation bar. Navigation will be 100% width.
-- Use .container to add left/right margin.
-- For Absolute use '.absolute'
-- For Fixed use '.fixed'
-
-#### .col-custom
-- Creates columns divs side by side.
-- Set your own width of each column
-
-#### .show, .visually-show
-- Add these class 2 for fade in.
-- Use setUpLightbox() to set up listeners.
-
 
 #### .lightbox
 
@@ -46,18 +38,6 @@ setUpLightbox('triggerElement', 'lightboxID',
     	// Close Lightbox Call back
 	}
 );
-```
-
-#### .horizontal-nav
-- Creates Horizontal Navigation
-- Add ".fixed" or ".absolute" to make them fixed or absoluted
-- Use setUpResponsiveNav() function in JS to set up responsive navigation animations
-
-```javascript
-setUpResponsiveNav({
-    "animation": "slideDown | slideInLeft | slideInRight",
-    "width": "% | px",
-});
 ```
 
 #### #map

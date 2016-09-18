@@ -6,11 +6,6 @@ $(document).ready(function() {
     //////////////////////////////////////////
     // Examples Start
     //////////////////////////////////////////
-    setUpResponsiveNav({
-        "animation": "slideInRight",
-        "width": "80%",
-    });
-
     setUpLightbox('.horizontal-nav .menu li:first-child', '#main',
         function() {
             $('#main.lightbox .wrapper').css({ "height": "200px", "width": "200", "background-color": "#fff"});

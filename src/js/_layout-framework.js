@@ -1,41 +1,7 @@
 /*************************************
  * GLOBAL VARIABLES
  *************************************/
-
-/**
-* Set up a responsive navigation
-* @param {Object} options [animation options for responsive]
-* 
-* Example
-* options = {
-*     "animation": "slideDown | slideInLeft | slideInRight",
-*     "width": "% | px"
-* }
-*/
-function setUpResponsiveNav(options) {
-
-    // Set class for animation type
-    $('.horizontal-nav .menu').addClass(options.animation);
-
-    // Set width of menu
-    $('.horizontal-nav .menu').css({
-        "width" : options.width
-    });
-
-    // On hamburger click
-    $('#hamburger').click(function(){
-        // Animate hamburger to close
-        $(this).toggleClass('open');
-
-        if (options.animation == "slideDown") {
-            $('.horizontal-nav .menu').slideToggle();
-        }
-        else {
-            $('.horizontal-nav .menu').toggleClass("open");
-        }
-    });
-}
-
+ 
 /**
  * Set up lightbox.
  * Lightbox DOM element has to be direct child of body.
