@@ -1,12 +1,7 @@
 RewriteEngine On
-#RewriteCond %{REQUEST_FILENAME} !-f
-
-
-# Remove .HTML extension
-#RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 # 404
-#ErrorDocument 404 /dir/404.html
+#ErrorDocument 404 /dist/404.html
 
 
 # https://gtmetrix.com/add-expires-headers.html

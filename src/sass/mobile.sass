@@ -12,50 +12,6 @@
 
 @media #{$mq-xs-480-767}
 
-	.horizontal-nav
-		padding: 0
-		.logo, .menu
-			display: block
-			width: 100%
-			padding: 0 15px
-		
-		#hamburger
-			display: block
-
-		.menu
-			display: none
-			height: auto
-			overflow: hidden
-			position: absolute
-
-			&.slideInLeft
-				display: block
-				left: -100%
-				+transition('0.5s')
-
-				&.open
-					left: 0
-
-			&.slideInRight
-				display: block
-				right: -100%
-				+transition('0.5s')
-
-				&.open
-					right: 0
-
-
-		ul
-			transform: none
-			top: 0
-			li
-				display: block
-				margin: 0
-				height: 40px
-
-				a
-					+v-align
-
 @media #{$mq-xxs-375-479}
 
 @media #{$mq-xxxs-min-374}

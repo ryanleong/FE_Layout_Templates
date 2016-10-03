@@ -13,19 +13,31 @@ html(lang="en")
 		//- SEO Meta Description
 		meta(name="description" content="Lorem Ipsum")
 		//- SEO Keywords
-		meta(name="keywords" content="fixx,digital,web,website,design,designer,development")
+		meta(name="keywords" content="keywords, key")
 		//- hreflang
-		link(rel="alternate", href="http://fixxstaging.com/fixx", hreflang="x-default")
+		link(rel="alternate", href="SITE_URL", hreflang="x-default")
 
-		//- INSERT FAVICON HERE
+		//- FAVICON
+		link(rel="icon", type="image/png", href="myicon.png")
+
+
 
 		//- *********************** -//
 		//- 	   CSS FILES 		-//
 		//- *********************** -//
 
 		//- CSS FILE: APP
-		link(type='text/css', rel='stylesheet', media='all', href='assets/css/app.css')
+		link(type='text/css', rel='stylesheet', media='all', href='assets/css/reset.css')
 
+		//- CSS FILE: SWIPER CSS
+		//- link(type='text/css', rel='stylesheet', media='all', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css')
+		
+		//- CSS FILE: file containing modified libraries
+		link(type='text/css', rel='stylesheet', media='all', href='assets/css/libraries.css')
+
+		//- CSS FILE: APP
+		link(type='text/css', rel='stylesheet', media='all', href='assets/css/app.css')
+		
 		//- CSS FILE: MOBILE
 		link(type='text/css', rel='stylesheet', href='assets/css/mobile.css', media="(max-width: 1199px)")
 
@@ -87,18 +99,34 @@ html(lang="en")
 
 
 
-	//- *********************** -//
-	//- 		JS FILES 		-//
-	//- *********************** -//
-	
-	//- JS FILE: All 3rd Party Libraries
-	script(src="assets/js/libraries.js")
+		//- *********************** -//
+		//- 		JS FILES 		-//
+		//- *********************** -//
+		
+		//- JS FILE: All 3rd Party Libraries
+		//- script(src="assets/js/libraries.js")
 
-	block javascript
+		//- JS FILE: jQuery
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
 
-	//- JS FILE: APP
-	script(src='assets/js/app.js')
-	
-	//- JS FILE: GOOGLE MAPS
-	//- Has to be after main JS file as init function resides there
-	//- script(src="https://maps.googleapis.com/maps/api/js?callback=initMap", async, defer)
+		//- JS FILE: ImagesLoaded JS
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js")
+		
+		//- JS FILE: Swiper JS
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js")
+		
+		//- JS FILE: WOW JS
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js")
+		
+		//- JS FILE: ReadMore JS
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.0/readmore.min.js")
+
+
+		block javascript
+
+		//- JS FILE: APP
+		script(src='assets/js/app.js')
+		
+		//- JS FILE: GOOGLE MAPS
+		//- Has to be after main JS file as init function resides there
+		//- script(src="https://maps.googleapis.com/maps/api/js?callback=initMap", async, defer)

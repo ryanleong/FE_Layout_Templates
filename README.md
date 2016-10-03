@@ -2,20 +2,26 @@
 # Layout Framework
 ### CSS Libraries
 
-These libraries have been converted to SASS to be imported
+These libraries have been converted to SASS to be imported as they have been customized
 - Reset CSS
 - Normalize CSS
 - Bootstrap (only grid system)
 - Animate CSS
 
-### JS Libraries
-- jQuery 2.2.4
-- Swiper
-. WOW
-- jQuery ImagesLoaded
+Theses libraries are CDN calls
+- Swiper 3.3.1
+
+### JS Libraries (from CDN)
+- jQuery 3.1.1
+- Swiper 3.3.1
+. WOW 1.1.2
+- jQuery ImagesLoaded 4.1.1
 
 
 ### Components
+
+#### JS Functions
+Refer to "src/assets/js/_layout-framework.js".
 
 #### .lightbox
 
@@ -44,6 +50,8 @@ setUpLightbox('triggerElement', 'lightboxID',
 - Creates a div containing Google Maps
 - initMap() is used
 - initMap() is the callback for the Google Maps API
+
+
 
 # Layout Templates
 ### Full Width hero
