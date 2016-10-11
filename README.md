@@ -2,16 +2,17 @@
 # Layout Framework
 ### CSS Libraries
 
-These libraries have been converted to SASS to be imported as they have been customized
+Libraries in SASS
 - Reset CSS
 - Normalize CSS
 - Bootstrap (only grid system)
 - Animate CSS
+- Swiper CSS
 
 Theses libraries are CDN calls
 - Swiper 3.3.1
 
-### JS Libraries (from CDN)
+### JS Libraries
 - jQuery 3.1.1
 - Swiper 3.3.1
 . WOW 1.1.2
