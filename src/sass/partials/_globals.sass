@@ -34,5 +34,5 @@ $retina: 'all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device
 /////////////////////////////////////////////
 // Functions
 /////////////////////////////////////////////
-@function em($pixels, $context: $browser-context)
+@function em($pixels, $context: "16")
 	@return #{$pixels/$context}rem
