@@ -26,6 +26,9 @@ html(lang="en")
 		//- 	   CSS FILES 		-//
 		//- *********************** -//
 
+		//- Swiper
+		link(type='text/css', rel='stylesheet', media='all', href='../../vendors/swiper/dist/css/swiper.min.css')
+		
 		//- CSS FILE: APP
 		link(type='text/css', rel='stylesheet', media='all', href='assets/css/app.css')
 		
@@ -97,11 +100,11 @@ html(lang="en")
 		//- JS FILE: All 3rd Party Libraries
 		script(src="assets/js/libs.js")
 
-		block javascript
-
 		//- JS FILE: APP
 		script(src='assets/js/app.js')
 		
 		//- JS FILE: GOOGLE MAPS
 		//- Has to be after main JS file as init function resides there
 		//- script(src="https://maps.googleapis.com/maps/api/js?callback=initMap", async, defer)
+		
+		block javascript

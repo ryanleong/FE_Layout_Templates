@@ -1,0 +1,140 @@
+/************************************/
+/*			RESET GENERAL			*/
+/************************************/
+html, body {
+  font-size: 16px;
+}
+
+body * {
+  display: block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  box-sizing: border-box;
+  text-transform: none;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+body *:focus {
+  outline: none;
+  outline-offset: initial;
+}
+
+script, style {
+  display: none;
+}
+
+span {
+  display: inline-block;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+ol.list-default, ul.list-default {
+  padding-left: 40px;
+  list-style: initial;
+}
+
+ol.list-default li, ul.list-default li {
+  display: list-item;
+}
+
+*.list-default ul, *.list-default ol {
+  padding-left: 40px;
+  list-style: initial;
+}
+
+*.list-default ul li, *.list-default ol li {
+  display: list-item;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/********************************/
+/*			RESET FORM			*/
+/********************************/
+input[type=month], input[type=week],
+input[type=date], input[type=datetime],
+input[type=time], input[type=datetime-local],
+input[type=email], input[type=password], input[type=tel],
+input[type=url], input[type=number], input[type=range],
+input[type=search], input[type=text], input[type=checkbox], input[type=radio] {
+  width: auto;
+  height: auto;
+}
+
+input[type=file] ::-webkit-search-decoration, input[type=search] ::-webkit-search-decoration {
+  display: none;
+}
+
+button, input[type="reset"],
+input[type="button"], input[type="submit"] {
+  overflow: visible;
+  width: auto;
+}
+
+button ::-webkit-file-upload-button, input[type="reset"] ::-webkit-file-upload-button,
+input[type="button"] ::-webkit-file-upload-button, input[type="submit"] ::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+textarea {
+  vertical-align: top;
+  overflow: auto;
+}
+
+select, select[multiple] {
+  vertical-align: top;
+}

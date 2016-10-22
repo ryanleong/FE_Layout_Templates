@@ -1,0 +1,204 @@
+/************************************/
+/*         LAYOUT FRAMEWORK         */
+/************************************/
+
+/////////////////////////////////////////////
+// Global Styles
+/////////////////////////////////////////////
+#page-wrapper {
+	min-height: calc(100vh - #{$footer-height});
+	// top: #{$nav-height} // Use this if navigation is relative;
+	width: 100%;
+}
+
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.v-align {
+	transform: translateY(-50%);
+	top: 50%;
+}
+
+// Use jquery at all classes one after another
+// forming a fade in effect from display: none
+.show {
+	display: block !important;
+	
+	&.visually-show {
+			opacity: 1 !important;
+	}
+}
+
+// Styling input fields
+input[type=month], input[type=week],
+input[type=date], input[type=datetime],
+input[type=time], input[type=datetime-local],
+input[type=email], input[type=password], input[type=tel],
+input[type=url], input[type=number], input[type=range],
+input[type=search], input[type=text], textarea {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #ccc;
+	padding: 0 20px;
+	@include transition('0.3s');
+
+	&:focus {
+		border-color: #3FC3FF;
+	}
+}
+textarea {
+	min-height: 120px;
+	max-height: 120px;
+	height: 120px;
+	padding: 10px 20px;
+}
+
+.file-upload-container {
+	width: 100%;
+	height: 40px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+
+	input#file-upload[type="file"] {
+		width: 100%;
+		height: 38px;
+		opacity: 0;
+		z-index: 3;
+	}
+	label {
+		position: absolute;
+		display: inline-block;
+		top: 4px;
+		right: 5px;
+		width: 120px;
+		border-radius: 6px;
+		background-color: #ccc;
+		line-height: 30px;
+		text-align: center;
+	}
+}
+
+a.button {
+	border: 1px solid #999;
+	height: 40px;
+	line-height: 39px;
+	padding: 0 40px;
+	border-radius: 6px;
+	background-color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+img {
+	width: 100%
+}
+
+
+/////////////////////////////////////////////
+// Used to simulate background-size: cover
+/////////////////////////////////////////////
+.cover-wrap {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+
+	.cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		min-width: 50%;
+		min-height: 50%;
+		overflow-x: hidden;
+	}
+}
+
+/////////////////////////////////////////////
+// Items
+/////////////////////////////////////////////
+.lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.75);
+	z-index: 99;
+	display: none;
+	opacity: 0;
+	@include transition(0.3s);
+
+	svg {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+	path {
+		fill: #fff;
+		stroke: #fff;
+	}
+	.wrapper {
+		margin: 0 auto;
+	}
+}
+
+.sticky-nav {
+	position: absolute;
+
+	&.stuck {
+		position: fixed;
+	}
+}
+/////////////////////////////////////////////
+// Loading Animations
+/////////////////////////////////////////////
+@keyframes loadingDotsAnimation {
+    0% {
+    	opacity: 1;
+    }
+    25% {
+    	opacity: 0;
+    }
+    50% {
+    	opacity: 1;
+    }
+    100% {
+    	opacity: 1;
+    }
+}
+
+.loading-dots {
+	width: 52px;
+	margin: 0 auto;
+
+	.dot {
+		display: inline-block;
+		background-color: #8F8F8F;
+		width: 8px;
+		height: 8px;
+		border-radius: 	4px;
+		margin: 0 3px;
+		opacity: 1;
+		animation-name: loadingDotsAnimation;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		@include transition;
+
+		&:nth-child(2) {
+			animation-delay: 0.1s;
+		}
+
+		&:last-child {
+			animation-delay: 0.2s;
+		}
+	}
+}
