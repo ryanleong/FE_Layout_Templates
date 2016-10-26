@@ -21,6 +21,7 @@
     "swiper": "^3.4.0",
     "wow": "^1.1.2",
     "reset-css": "^2.2.0",
-    "rellax": "https://github.com/dixonandmoe/rellax.git"
+    "rellax": "https://github.com/dixonandmoe/rellax.git",
+    "bootstrap-sass": "^3.3.7"
   }
 }

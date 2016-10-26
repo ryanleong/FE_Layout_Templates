@@ -1,4 +1,7 @@
-//@prepros-prepend _layout-framework.js
+//@prepros-prepend components/_on-resize.js
+//@prepros-prepend components/_lightbox.js
+//@prepros-prepend components/_animate-scroll.js
+
 
 $(document).ready(function() {
 
