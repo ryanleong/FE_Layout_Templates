@@ -2,6 +2,36 @@
 /*         LAYOUT FRAMEWORK         */
 /************************************/
 
+
+/////////////////////////////////////////////
+// Normalize Styles
+/////////////////////////////////////////////
+body {
+	& * {
+		display: block;
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center;
+		box-sizing: border-box;
+		text-transform: none;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-weight: normal;
+		line-height: normal;
+		letter-spacing: normal;
+
+		&:focus {
+			outline: none;
+			outline-offset: initial;
+		}
+	}
+}
+
+script, style { display: none; }
+
+span { display: inline-block; }
+
 /////////////////////////////////////////////
 // Global Styles
 /////////////////////////////////////////////

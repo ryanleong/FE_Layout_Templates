@@ -5,7 +5,7 @@
 @import '../../vendors/reset-css/_reset.scss';
 
 // Bootstrap grid
-@import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/variables'; // Create new variable files when custom is needed
 @import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 @import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
 @import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/grid';
