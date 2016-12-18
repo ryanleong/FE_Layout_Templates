@@ -4,11 +4,20 @@
 $nav-height      : 50px;
 $footer-height   : 50px;
 
+// Desktop First media queries
 $mq-md-992-1199: '(max-width: 1199px)';
 $mq-sm-768-991: '(max-width: 991px)';
 $mq-xs-480-767: '(max-width: 767px)';
 $mq-xxs-375-479: '(max-width: 479px)';
 $mq-xxxs-min-374: '(max-width: 374px)';
+
+// Responsive first media queries
+$xxxs: '(min-width 320px)';
+$xxs: '(min-width 375px)';
+$xs: '(min-width 480px)';
+$sm: '(min-width 768px)';
+$md: '(min-width 992px)';
+$lg: '(min-width 1200px)';
 
 $retina: 'all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5)';
 
@@ -20,20 +29,26 @@ $retina: 'all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device
 	transition-delay: #{$delay};
 }
 
-@mixin v-align($topValue:"50%") {
+@mixin v-align($top:"50%") {
 	transform: translateY(-50%);
-	top: #{$topValue};
+	top: #{$top};
+}
+
+@mixin h-align($left: "50%") {
+	transform: translateX(-50%);
+	left: #{$left};
 }
 
 @mixin at2x($path, $ext: "jpg") {
 	$at1x_path: "#{$path}.#{$ext}";
 	$at2x_path: "#{$path}@2x.#{$ext}";
 	background-image: url("#{$at1x_path}");
-	
+
 	@media all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
 		background-image: url("#{$at2x_path}");
 	}
 }
+
 /////////////////////////////////////////////
 // Functions
 /////////////////////////////////////////////
