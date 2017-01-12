@@ -5,3 +5,8 @@
 ```
 bower install
 ```
+
+## Adding new dependency to setup
+```
+bower install PACKAGE_NAME --save
+```
