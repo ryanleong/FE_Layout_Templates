@@ -5,21 +5,11 @@
 
 $(document).ready(function() {
 
+	// var homeLightbox = Lightbox.new('#main', '.footer');
 
-	//////////////////////////////////////////
-	// Examples Start
-	//////////////////////////////////////////
-	setUpLightbox('.horizontal-nav .menu li:first-child', '#main',
-		function() {
-			$('#main.lightbox .wrapper').css({ "height": "200px", "width": "200", "background-color": "#fff"});
-		},
-		function() {
-			$('#main.lightbox .wrapper').css({ "height": "0", "width": "0", "background-color": "#fff"});
-		});
-	//////////////////////////////////////////
-	// Examples End
-	//////////////////////////////////////////
 
+	// var home = lightbox.newLightbox;
+	// console.log(home);
 
 
 	// Default Stellar initialization   

@@ -1,47 +1,137 @@
 /**
- * Set up lightbox.
- * Lightbox DOM element has to be direct child of body.
- * @param {String} openButtonName       [DOM element selector of opening button]
- * @param {String} lightboxID           [ID of lightbox]
- * @param {function} openCallbackFn     [Callback function when lightbox is opened]
- * @param {function} closeCallbackFn    [Callback function when lightbox is closed]
+ * Name: Lightbox Library
+ * Creator: Ryan Leong
+ * 
+ * Public functions:
+ * 		init()
+ * 		refresh()
+ * 		setOnOpenCallback(callback)
+ * 		setOnCloseCallBack(callback)
  */
-function setUpLightbox(openButtonName, lightboxID, openCallbackFn, closeCallbackFn) {
-	$(openButtonName).click(function() {
-		openCallbackFn();
 
-		$('body').addClass('no-scroll');
-		fadeIn(lightboxID + '.lightbox');
-	});
+window.Lightbox = {
 
-	$(lightboxID + '.lightbox #close').click(function() {
-		closeCallbackFn();
-		
-		$('body').removeClass('no-scroll');
-		fadeOut(lightboxID + '.lightbox');
-	});
-}
+	/**
+	 * Function to create new instance of lightbox
+	 * @param  {String} lightboxID ID of lightbox
+	 * @param  {String} openButton Class/ID of lightbox
+	 * @return Object  	Instance of Lightbox
+	 */
+	new: function( lightboxID, openButton ) {
 
-/**
- * Fade in animation from Display Block
- * @param  {String} element [DOM element selector]
- * @return none
- */
-function fadeIn(element) {
-	$(element).addClass('show');
-	setTimeout(function () {
-		$(element).addClass('visually-show');
-	}, 20);
-}
+		/**
+		 * Lightbox Instance
+		 * Public functions:
+		 * 		init()
+		 * 		refresh()
+		 * 		setOnOpenCallback(callback)
+		 * 		setOnCloseCallBack(callback)
+		 */
+		var lbInstance = (function () {
+			/**
+			 * Varaiables
+			 */
+			var $openButton;
+			var $lightbox;
+			var onOpenCallback = function() {};
+			var onCloseCallback = function() {};
 
-/**
- * Fade out animation to Display Block
- * @param  {String} element [DOM element selector]
- * @return none
- */
-function fadeOut(element) {
-	$(element).removeClass('visually-show');
-	$(element).one('transitionend', function(e) {
-		$(element).removeClass('show');
-	});
-}
+
+
+			/**
+			 * Initilize
+			 * @param  {String} lightboxID ID of lightbox
+			 * @param  {String} openButton Class/ID of lightbox
+			 * @return {none}
+			 */
+			var init = function( lightboxID, openButton ) {
+				// Set on click event
+				$openButton = $(openButton);
+				$lightbox = $(lightboxID + '.lightbox');
+
+				createOpenListener();
+				createCloseListener();
+			};
+
+			/**
+			 * Reinitialize Lightbox
+			 * @return {[type]} [description]
+			 */
+			var refresh = function() {
+				$openButton.off('click');
+				$lightbox.find('#close').off('click');
+
+				createOpenListener();
+				createCloseListener();
+			};
+
+			/**
+			 * Set on open callback
+			 * @param {Function} callback Callback on open
+			 */
+			var setOnOpenCallback = function( callback ) {
+				onOpenCallback = callback;
+			};
+
+			/**
+			 * Set on close callback
+			 * @param {Function} callback Callback on close
+			 */
+			var setOnCloseCallBack = function( callback ) {
+				onCloseCallback = callback;
+			};
+
+			/**
+			 * Create open listener
+			 * @return {[type]} [description]
+			 */
+			var createOpenListener = function() {
+				$openButton.click(function() {
+					onOpenCallback();
+
+					$('body').addClass('no-scroll');
+					$lightbox.fadeIn();
+				});
+			};
+
+			/**
+			 * Create close listener
+			 * @return {[type]} [description]
+			 */
+			var createCloseListener = function() {
+				$lightbox.find('#close').click(function() {
+					onCloseCallback();
+					
+					$('body').removeClass('no-scroll');
+					$lightbox.fadeOut();
+				});
+			};
+
+
+
+			/**
+			 * Return public functions
+			 */
+			return {
+				init: init,
+				refresh: refresh,
+				onOpen: setOnOpenCallback,
+				onClose: setOnCloseCallBack
+			};
+
+		}());
+
+
+
+		/**
+		 * Initialize
+		 */
+		lbInstance.init( lightboxID, openButton );
+
+
+		/**
+		 * Return instance of lightbox
+		 */
+		return lbInstance;
+	}
+};
