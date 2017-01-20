@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
 
-	// var homeLightbox = Lightbox.new('#main', '.footer');
+	var homeLightbox = new Lightbox('#main', '.footer');
 
 
 	// var home = lightbox.newLightbox;
