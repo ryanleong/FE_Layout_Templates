@@ -12,12 +12,12 @@ $mq-xxs-375-479: '(max-width: 479px)';
 $mq-xxxs-min-374: '(max-width: 374px)';
 
 // Responsive first media queries
-$xxxs: '(min-width 320px)';
-$xxs: '(min-width 375px)';
-$xs: '(min-width 480px)';
-$sm: '(min-width 768px)';
-$md: '(min-width 992px)';
-$lg: '(min-width 1200px)';
+$xxxs: '(min-width: 320px)';
+$xxs: '(min-width: 375px)';
+$xs: '(min-width: 480px)';
+$sm: '(min-width: 768px)';
+$md: '(min-width: 992px)';
+$lg: '(min-width: 1200px)';
 
 $retina: 'all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5)';
 
