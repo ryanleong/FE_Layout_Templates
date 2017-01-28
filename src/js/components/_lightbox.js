@@ -5,8 +5,8 @@
  * Public functions:
  * 		init()
  * 		refresh()
- * 		setOnOpenCallback(callback)
- * 		setOnCloseCallBack(callback)
+ * 		setOnOpenCallback(callback($openButton))
+ * 		setOnCloseCallBack(callback())
  */
 
 
@@ -16,8 +16,8 @@ window.Lightbox = function( lightboxID, openButton ) {
 	 * Public functions:
 	 * 		init()
 	 * 		refresh()
-	 * 		setOnOpenCallback(callback)
-	 * 		setOnCloseCallBack(callback)
+	 * 		setOnOpenCallback(callback($openButton))
+	 * 		setOnCloseCallBack(callback())
 	 */
 	var lbInstance = (function () {
 		/**
@@ -79,7 +79,7 @@ window.Lightbox = function( lightboxID, openButton ) {
 		 */
 		var createOpenListener = function() {
 			$openButton.click(function() {
-				onOpenCallback();
+				onOpenCallback($(this));
 
 				$('body').addClass('no-scroll');
 				$lightbox.fadeIn();
@@ -107,8 +107,8 @@ window.Lightbox = function( lightboxID, openButton ) {
 		return {
 			init: init,
 			refresh: refresh,
-			onOpen: setOnOpenCallback,
-			onClose: setOnCloseCallBack
+			setOnOpenCallback: setOnOpenCallback,
+			setOnCloseCallBack: setOnCloseCallBack
 		};
 
 	}());
@@ -125,4 +125,4 @@ window.Lightbox = function( lightboxID, openButton ) {
 	 * Return instance of lightbox
 	 */
 	return lbInstance;
-}
+};
