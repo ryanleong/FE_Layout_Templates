@@ -1,38 +1,18 @@
-///////////////////////////////////////
-// Libraries
-///////////////////////////////////////
-// Resets
-@import '../../vendors/reset-css/_reset.scss';
-
-// Bootstrap grid
-@import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/variables'; // Create new variable files when custom is needed
-@import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
-@import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
-@import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/grid';
-@import '../../vendors/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities';
-
-// Animate CSS
-@import 'partials/animate';
 
 ///////////////////////////////////////
 // Framework by Ryan Leong
 ///////////////////////////////////////
-@import 'partials/globals';
-@import 'partials/layout-framework';
-
-///////////////////////////////////////
-// Fonts
-///////////////////////////////////////
-@import 'partials/fonts';
-
-
-///////////////////////////////////////
-// Global styles
-///////////////////////////////////////
-html, body {
-}
+@import 'components/components';
 
 // Temporary Hide
 .navigation {
 	display: none;
 }
+
+///////////////////////////////////////
+// Global styles
+///////////////////////////////////////
+html, body {
+
+}
+

@@ -1,0 +1,56 @@
+body {
+	& * {
+		display: block;
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center;
+		box-sizing: border-box;
+		text-transform: none;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-weight: normal;
+		line-height: normal;
+		letter-spacing: normal;
+
+		&:focus {
+			outline: none;
+			outline-offset: initial;
+		}
+	}
+}
+
+script, style { display: none; }
+
+span { display: inline-block; }
+
+img { width: 100%; }
+
+#page-wrapper {
+	min-height: calc(100vh - #{$footer-height});
+	// top: #{$nav-height} // Use this if navigation is relative;
+	width: 100%;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.v-align {
+	transform: translateY(-50%);
+	top: 50%;
+}
+
+.button {
+	border: 1px solid #999;
+	height: 40px;
+	line-height: 39px;
+	padding: 0 35px;
+	border-radius: 6px;
+	// background-color: #fff;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block
+}
+
+
