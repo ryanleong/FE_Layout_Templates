@@ -6,12 +6,12 @@
 	transition-delay: #{$delay};
 }
 
-@mixin v-align($top:"50%") {
+@mixin v-align($top: 50%) {
 	transform: translateY(-50%);
 	top: #{$top};
 }
 
-@mixin h-align($left: "50%") {
+@mixin h-align($left: 50%) {
 	transform: translateX(-50%);
 	left: #{$left};
 }
