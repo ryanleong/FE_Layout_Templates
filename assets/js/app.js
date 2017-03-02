@@ -1,313 +1,93 @@
-/**
- * Executes onResize() function on resize end.
- * @return none
-*/
-function onResizeCallBack() {
-	if (new Date() - rtime < delta) {
-		setTimeout(onResizeCallBack, delta);
-	} else {
-		timeout = false;
 
-		// Create your onResize() function
-		try {
-			onResize();
+OnResize = (function () {
+	/**
+	 * Varaiables
+	 */
+	var args;
+	var rtime;
+	var timeout = false;
+	var delta = 200;
+
+	var callBack;
+
+	/**
+	 * Initilize code
+	 */
+	function init( callback ) {
+		this.callback = callback;
+
+
+		$(window).on('resize', function() {
+			rtime = new Date();
+			
+			if (timeout === false) {
+				timeout = true;
+
+				console.log('here');
+
+				setTimeout(_onResizeCallBack, delta);
+			}
+		});
+	}
+
+
+	/**
+	 * On Resize
+	 * @return {[type]} [description]
+	 */
+	function _onResizeCallBack() {
+		if (new Date() - rtime < delta) {
+			setTimeout(_onResizeCallBack, delta);
+		} else {
+			timeout = false;
+
+			// Create your onResize() function
+			try {
+				this.callback();
+			}
+			catch(e) {}
 		}
-		catch(e) {}
-	}
-}
-
-var rtime;
-var timeout = false;
-var delta = 200;
-$(window).on('resize', function() {
-	rtime = new Date();
-	if (timeout === false) {
-		timeout = true;
-		setTimeout(onResizeCallBack, delta);
-	}
-});
-
-/**
- * Name: Lightbox Library
- * Creator: Ryan Leong
- * 
- * Public functions:
- * 		init()
- * 		refresh()
- * 		setOnOpenCallback(callback)
- * 		setOnCloseCallBack(callback)
- */
-
-
-window.Lightbox = function( lightboxID, openButton ) {
-	/**
-	 * Lightbox Instance
-	 * Public functions:
-	 * 		init()
-	 * 		refresh()
-	 * 		setOnOpenCallback(callback)
-	 * 		setOnCloseCallBack(callback)
-	 */
-	var lbInstance = (function () {
-		/**
-		 * Varaiables
-		 */
-		var $openButton;
-		var $lightbox;
-		var onOpenCallback = function() {};
-		var onCloseCallback = function() {};
-
-
-
-		/**
-		 * Initilize
-		 * @param  {String} lightboxID ID of lightbox
-		 * @param  {String} openButton Class/ID of lightbox
-		 * @return {none}
-		 */
-		var init = function( lightboxID, openButton ) {
-			// Set on click event
-			$openButton = $(openButton);
-			$lightbox = $(lightboxID + '.lightbox');
-
-			createOpenListener();
-			createCloseListener();
-		};
-
-		/**
-		 * Reinitialize Lightbox
-		 * @return {[type]} [description]
-		 */
-		var refresh = function() {
-			$openButton.off('click');
-			$lightbox.find('#close').off('click');
-
-			createOpenListener();
-			createCloseListener();
-		};
-
-		/**
-		 * Set on open callback
-		 * @param {Function} callback Callback on open
-		 */
-		var setOnOpenCallback = function( callback ) {
-			onOpenCallback = callback;
-		};
-
-		/**
-		 * Set on close callback
-		 * @param {Function} callback Callback on close
-		 */
-		var setOnCloseCallBack = function( callback ) {
-			onCloseCallback = callback;
-		};
-
-		/**
-		 * Create open listener
-		 * @return {[type]} [description]
-		 */
-		var createOpenListener = function() {
-			$openButton.click(function() {
-				onOpenCallback();
-
-				$('body').addClass('no-scroll');
-				$lightbox.fadeIn();
-			});
-		};
-
-		/**
-		 * Create close listener
-		 * @return {[type]} [description]
-		 */
-		var createCloseListener = function() {
-			$lightbox.find('#close').click(function() {
-				onCloseCallback();
-				
-				$('body').removeClass('no-scroll');
-				$lightbox.fadeOut();
-			});
-		};
-
-
-
-		/**
-		 * Return public functions
-		 */
-		return {
-			init: init,
-			refresh: refresh,
-			onOpen: setOnOpenCallback,
-			onClose: setOnCloseCallBack
-		};
-
-	}());
-
-
-
-	/**
-	 * Initialize
-	 */
-	lbInstance.init( lightboxID, openButton );
-
-
-	/**
-	 * Return instance of lightbox
-	 */
-	return lbInstance;
-}
-
-/**
- * Name: ScrollAnimate Library
- * Creator: Ryan Leong
- * 
- * Public functions:
- * 		init()
- * 		refresh()
- * 		suspend()
- */
-window.ScrollAnimate = function( options ) {
-
-
-	/**
-	 * ScrollAnimate Instance
-	 * Public functions:
-	 * 		init()
-	 * 		refresh()
-	 * 		suspend()
-	 */
-	var ScrollAnimateInstance = (function() {
-
-		/**
-		 * Variables
-		 */
-		var $trigger;
-		var $elementToScroll;
-		var $elementToScrollTo;
-		var speed;
-
-		/**
-		 * Initialize
-		 * @param  {int} 	trigger           Selector of element that triggers scroll
-		 * @param  {String} elementToScroll   Selector of element to scroll
-		 * @param  {String} elementToScrollTo Selector of element to scroll to
-		 * @param  {int} 	speed             Duration of animation 
-		 * @return {none}
-		 */
-		var init = function( trigger, elementToScroll, elementToScrollTo, speed ) {
-			$trigger = trigger;
-			$elementToScroll = elementToScroll;
-			$elementToScrollTo = elementToScrollTo;
-			speed = this.speed;
-
-			$trigger.click(function(event) {
-				animiateScrollTo( speed, 0 );
-			});
-		};
-
-		/**
-		 * Animate scroll
-		 * @param  {int} speed  	Duration of animation in milliseconds
-		 * @param  {int} offset 	Pixel offset from element to scroll to
-		 * @return {none}
-		 */
-		var animiateScrollTo = function ( speed, offset ) {
-			$elementToScroll.animate({
-				scrollTop: $elementToScrollTo.offset().top + offset
-			}, speed);
-		};
-
-		/**
-		 * Re-Initialize ScrollAnimate instance
-		 * @return {none}
-		 */
-		var refresh = function() {
-			$trigger.off('click');
-			$elementToScroll.off('animate');
-
-			init( $trigger, $elementToScroll, $elementToScrollTo, speed );
-		};
-
-		/**
-		 * Suspends scroll to function.
-		 * Use init() to restart.
-		 * @return {none}
-		 */
-		var suspend = function() {
-			$trigger.off('click');
-			$elementToScroll.off('animate');
-		};
-
-
-		return {
-			init: init,
-			refresh: refresh,
-			suspend, suspend
-		};
-
-	}());
-
-
-
-	/**
-	 * Check for needed parameters
-	 */
-	if (typeof options.trigger !== 'undefined' &&
-		typeof options.elementToScrollTo !== 'undefined' ) {
-
-		
-		/**
-		 * Set default element to scroll if none was set
-		 */
-		if (typeof options.elementToScroll !== 'undefined') {
-			options.elementToScroll = 'html, body';
-		}
-
-		/**
-		 * Set default animation duration if none was set
-		 */
-		if (typeof options.speed !== 'undefined') {
-			options.speed = 400;
-		}
-
-		/**
-		 * Initialize ScrollAnimate instance
-		 */
-		ScrollAnimateInstance.init( $(options.trigger), $(options.elementToScroll), $(options.elementToScrollTo), options.speed );
-
-		/**
-		 * Return ScrollAnimate instance
-		 */
-		return ScrollAnimateInstance;
 	}
 
 	/**
-	 * If all required options were not set
+	 * Cache DOM elements before running
+	 * @return {[type]} [description]
 	 */
-	else {
-		console.log('AnimateScroll: \ntrigger, elementToScrollTo need to be specified.');
-		return false;
+	function _cacheDom() {
+
 	}
 
-};
+	/**
+	 * Output changes to DOM element
+	 * @return {[type]} [description]
+	 */
+	function _render() {
 
-//@prepros-prepend components/_on-resize.js
-//@prepros-prepend components/_lightbox.js
-//@prepros-prepend components/_animate-scroll.js
+	}
+
+	/**
+	 * Destroy
+	 * @return {[type]} [description]
+	 */
+	function destroy() {
+		$(window).off('resize');
+	}
+
+	/**
+	 * Return public functions
+	 */
+	return {
+		init: init,
+		destroy: destroy
+	}
+
+}());
+
+//@prepros-prepend components/_OnResize.js
+
 
 
 $(document).ready(function() {
-
-	var homeLightbox = new Lightbox('#main', '.footer');
-
-	var k = new ScrollAnimate({
-		trigger: '.efei',
-		// speed: 1000,
-		// elementToScrollTo: '.jowiefew',
-		// elementToScroll: '.asdfafwew'
-	});
-	// k.refresh();
-	// var home = lightbox.newLightbox;
-	// console.log(home);
 
 
 	// Default Stellar initialization   

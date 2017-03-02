@@ -1,21 +1,8 @@
-//@prepros-prepend components/_on-resize.js
-//@prepros-prepend components/_lightbox.js
-//@prepros-prepend components/_animate-scroll.js
+//@prepros-prepend components/_OnResize.js
+
 
 
 $(document).ready(function() {
-
-	var homeLightbox = new Lightbox('#main', '.footer');
-
-	var k = new ScrollAnimate({
-		trigger: '.efei',
-		// speed: 1000,
-		// elementToScrollTo: '.jowiefew',
-		// elementToScroll: '.asdfafwew'
-	});
-	// k.refresh();
-	// var home = lightbox.newLightbox;
-	// console.log(home);
 
 
 	// Default Stellar initialization   
