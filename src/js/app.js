@@ -22,10 +22,6 @@ $(document).ready(function() {
 
 });
 
-function onResize() {
-	// Resize Callback Triggered
-}
-
 
 // Initialize Google Maps
 function initMap() {
