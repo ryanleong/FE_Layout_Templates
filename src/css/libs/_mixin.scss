@@ -26,6 +26,18 @@
 	}
 }
 
+@mixin fontsize($pixels) {
+	font-size: #{$pixels / $base-font-size}rem;
+}
+
+@mixin letterspacing($pixels: 1) {
+	letter-spacing: #{$pixels / $base-font-size}rem;
+}
+
+@mixin lineheight($fontsize, $multiplier: 1.38) {
+	line-height: #{$fontsize / $base-font-size * $multiplier}rem;
+}
+
 /////////////////////////////////////////////
 // Functions
 /////////////////////////////////////////////

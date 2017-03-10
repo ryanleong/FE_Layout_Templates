@@ -1,18 +1,5 @@
 
-///////////////////////////////////////
-// Framework by Ryan Leong
-///////////////////////////////////////
-@import 'components/components';
+@import 'libs/libraries';
 
-// Temporary Hide
-.navigation {
-	display: none;
-}
-
-///////////////////////////////////////
-// Global styles
-///////////////////////////////////////
-html, body {
-
-}
+@import 'components/typeface';
 
