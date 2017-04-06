@@ -21,7 +21,7 @@
  *	'.lightboxID', '.openButton'
  */
 
- Lightbox = (function () {
+Lightbox = function ( lightboxID, openButton ) {
 	/**
 	 * Varaiables
 	 */
@@ -31,7 +31,6 @@
 	var onCloseCallback = function() {};
 
 
-
 	/**
 	 * Initilize
 	 * @param  {String} lightboxID ID of lightbox
@@ -39,6 +38,9 @@
 	 * @return {none}
 	 */
 	var init = function( lightboxID, openButton ) {
+		if (typeof lightboxID === 'undefined' || typeof openButton === 'undefined') {
+			return;
+		}
 		// Set on click event
 		$openButton = $(openButton);
 		$lightbox = $(lightboxID + '.lightbox');
@@ -46,6 +48,7 @@
 		createOpenListener();
 		createCloseListener();
 	};
+	init(lightboxID, openButton);
 
 	/**
 	 * Reinitialize Lightbox
@@ -113,4 +116,4 @@
 		setOnCloseCallBack: setOnCloseCallBack
 	};
 
-}());
+};

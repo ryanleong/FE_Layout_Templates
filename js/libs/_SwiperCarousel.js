@@ -9,6 +9,7 @@
  *
  * Public Functions
  * =====================
+ * - init()
  * - destroy()
  * - newSwiper()
  * - refreshSwiper()
@@ -34,7 +35,7 @@
  *	}
  */
 
-SwiperCarousel = (function () {
+SwiperCarousel = function (options) {
 	/**
 	 * Initilize code
 	 */
@@ -44,18 +45,13 @@ SwiperCarousel = (function () {
 
 
 	/**
-	 * Cache DOM elements before running
-	 * @return {[type]} [description]
+	 * Initilize code
 	 */
-	function _cacheDom() {
+	function init( options ) {
+		setArgs( options );
 	}
+	init( options );
 
-	/**
-	 * Output changes to DOM element
-	 * @return {[type]} [description]
-	 */
-	function _render() {
-	}
 
 	/**
 	 * Set options
@@ -133,12 +129,13 @@ SwiperCarousel = (function () {
 	 * Return public functions
 	 */
 	return {
+		init: init,
 		destroy: destroy,
 		newSwiper: newSwiper,
-		refreshSwiper: refreshSwiper
+		refreshSwiper: refreshSwiper,
 		setArgs: setArgs,
 		setContainer: setContainer,
 		setSingleArgs: setSingleArgs,
 	};
 
-}());
+};

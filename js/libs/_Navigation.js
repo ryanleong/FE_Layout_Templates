@@ -26,8 +26,7 @@
  *	}
  */
 
-
-Navigation = (function () {
+Navigation = function (options) {
 	/**
 	 * Varaiables
 	 */
@@ -44,6 +43,7 @@ Navigation = (function () {
 		_cacheDom();
 		_render();
 	}
+	init(options);
 	
 
 	function setArgs( options ) {
@@ -94,6 +94,10 @@ Navigation = (function () {
 		$trigger.off('click');
 	}
 
+	function getArgs() {
+		return args;
+	}
+
 	/**
 	 * Return public functions
 	 */
@@ -101,7 +105,8 @@ Navigation = (function () {
 		init: init,
 		destroy: destroy,
 		setArgs: setArgs,
-		setSingleArgs: setSingleArgs
+		setSingleArgs: setSingleArgs,
+		getArgs: getArgs
 	}
 
-}());
+};

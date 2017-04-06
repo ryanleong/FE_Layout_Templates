@@ -22,7 +22,7 @@
  *	}
  */
 
-StickyNav = (function () {
+StickyNav = function (options) {
 	/**
 	 * Varaiables
 	 */
@@ -42,6 +42,7 @@ StickyNav = (function () {
 
 		_createListener();
 	}
+	init( options );
 
 
 	/**
@@ -124,4 +125,4 @@ StickyNav = (function () {
 		setSingleArgs: setSingleArgs
 	};
 
-}());
+};

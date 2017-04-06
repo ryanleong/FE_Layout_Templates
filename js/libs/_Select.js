@@ -43,7 +43,7 @@
  *			.option(data-id="1") Others
  */
 
-Select = (function () {
+Select = function (options) {
 	/**
 	 * Varaiables
 	 */
@@ -60,6 +60,7 @@ Select = (function () {
 		_cacheDom();
 		_render();
 	}
+	init( options );
 
 	/**
 	 * Set options
@@ -157,4 +158,4 @@ Select = (function () {
 		setSingleArgs: setSingleArgs
 	}
 
-}());
+};

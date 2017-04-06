@@ -20,7 +20,7 @@
  *
  */
 
-OnResize = (function () {
+OnResize = function ( callbackFunction ) {
 	/**
 	 * Varaiables
 	 */
@@ -35,8 +35,11 @@ OnResize = (function () {
 	 * Initilize code
 	 */
 	function init( callbackFunction ) {
-		callback = callbackFunction;
+		if (typeof callbackFunction === 'undefined') {
+			return;
+		}
 
+		callback = callbackFunction;
 
 		$(window).on('resize', function() {
 			rtime = new Date();
@@ -50,6 +53,7 @@ OnResize = (function () {
 			}
 		});
 	}
+	init(callbackFunction);
 
 
 	/**
@@ -102,4 +106,4 @@ OnResize = (function () {
 		destroy: destroy
 	}
 
-}());
+};

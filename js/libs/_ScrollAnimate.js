@@ -26,7 +26,7 @@
  *	}
  */
 
-ScrollAnimate = (function() {
+ScrollAnimate = function(options) {
 
 	/**
 	 * Variables
@@ -58,7 +58,8 @@ ScrollAnimate = (function() {
 		$trigger.click(function(event) {
 			animiateScrollTo( speed, 0 );
 		});
-	};
+	}
+	init( options );
 
 
 	/**
@@ -120,4 +121,4 @@ ScrollAnimate = (function() {
 		setSingleArgs: setSingleArgs
 	};
 
-}());
+};
