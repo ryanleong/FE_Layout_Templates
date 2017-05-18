@@ -1,9 +1,6 @@
 //@prepros-prepend libs/_OnResize.js
-//@prepros-prepend libs/_Lightbox.js
 
 //@prepros-prepend components/LandingComponent.js
-
-var k = new Lightbox();
 
 $(document).ready(function() {
 
@@ -11,7 +8,6 @@ $(document).ready(function() {
 	// Default Stellar initialization   
 	$('body').imagesLoaded( function() {
 	});
-
 
 	// Default WOW initialization
 	// wow = new WOW({
