@@ -33,6 +33,7 @@ Navigation = function (options) {
 	var args;
 	var $nav;
 	var $trigger;
+	var openClass;
 
 	/**
 	 * Initilize code
@@ -71,6 +72,7 @@ Navigation = function (options) {
 	function _cacheDom() {
 		$nav = $(args.navClass);
 		$trigger = $(args.trigger);
+		openClass = args.openClass;
 	}
 
 	/**
@@ -80,7 +82,8 @@ Navigation = function (options) {
 	function _render() {
 		$trigger.click(function(event) {
 			
-			$nav.toggleClass('open');
+			// Open nav
+			$nav.toggleClass(openClass);
 
 			args.triggerCallback($(this));
 		});
