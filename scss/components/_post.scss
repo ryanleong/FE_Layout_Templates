@@ -1,7 +1,4 @@
 .post_content {
-	strong {
-		font-weight: 600;
-	}
 
 	em {
 		font-style: italic;
@@ -19,6 +16,19 @@
 	ol {
 		list-style-type: decimal;
 		padding-left: 40px;
+		margin-bottom: 15px;
+	}
+
+	li {
+		margin-bottom: 5px;
+	}
+
+	strong {
+		font-weight: 700;
+		font-family: inherit;
+		font-size: inherit;
+		letter-spacing: inherit;
+		line-height: inherit;
 	}
 
 	img {
@@ -37,5 +47,14 @@
 		margin-right: auto;
 	}
 
+	.alignleft {
+		float: left;
+		margin-right: 10px;
+	}
+
+	.alignright {
+		float: right;
+		margin-left: 10px;
+	}
 
 }
