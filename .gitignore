@@ -1,3 +1,6 @@
 # ignore all nodejs files
-node_modules/*
-vendors/*
+src/node_modules/*
+src/vendors/*
+
+# dist folder
+dist/*
