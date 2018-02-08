@@ -55,6 +55,63 @@ label {
 	}
 }
 
-.form-group {
-	margin-bottom: 20px;
+
+////////////////////////////////////
+// Forms Fields
+////////////////////////////////////
+.form {
+	&-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+	}	
+
+	&-field {
+		width: 100%;
+		margin-bottom: 28px;
+
+		&.col_2 {
+			width: 100%;
+			margin-right: 0;
+
+			&:last-child {
+				margin-right: 0;
+				margin-left: 0;
+			}
+
+			@media #{$sm} {
+				width: calc(50% - 17.5px);
+				margin-right: 17.5px;
+
+				&:last-child {
+					margin-right: 0;
+					margin-left: 17.5px;
+				}
+			}
+
+		}
+
+		label {
+			margin-bottom: 5px;
+			display: block;
+		}
+	}
+
+
+	input[type="text"], input[type="email"], textarea {
+		&::-webkit-input-placeholder {
+			color: #b6b6b6;
+		}
+
+		&::-moz-placeholder {
+			color: #b6b6b6;
+		}
+		&:-ms-input-placeholder {
+			color: #b6b6b6;
+		}
+		&:-moz-placeholder {
+			color: #b6b6b6;
+		}
+
+	}
 }

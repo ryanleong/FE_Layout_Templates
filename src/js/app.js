@@ -4,11 +4,6 @@
 
 $(document).ready(function() {
 
-
-	// Default Stellar initialization   
-	$('body').imagesLoaded( function() {
-	});
-
 	// Default WOW initialization
 	// wow = new WOW({
 	// 	boxClass: 'wow',

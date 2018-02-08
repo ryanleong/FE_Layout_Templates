@@ -104,6 +104,6 @@ OnResize = function ( callbackFunction ) {
 	return {
 		init: init,
 		destroy: destroy
-	}
+	};
 
 };
