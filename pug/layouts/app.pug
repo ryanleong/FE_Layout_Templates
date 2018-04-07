@@ -1,0 +1,41 @@
+include ../mixins/_mixin.pug
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+
+        block title
+            title Noel
+
+        meta(content="en" name="language")
+        meta(content="yes" name="apple-mobile-web-app-capable")
+        meta(content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport")
+
+        block meta
+            meta(content="Lorem Ipsum" name="description")
+            meta(content="keywords, key" name="keywords")
+
+        link(href="SITE_URL" hreflang="x-default" rel="alternate")
+
+
+        link(href="myicon.png" rel="icon" type="image/png")
+        link(href="assets/css/app.css" media="all" rel="stylesheet" type="text/css")
+
+    body
+        #site-wrapper
+
+            block navigation
+                include ../includes/_navigation.pug
+
+            block content
+
+
+            block footer
+                include ../includes/_footer.pug
+
+        block scripts
+            script(src="assets/js/libs.js")
+            script(src="assets/js/app.js")
+        
