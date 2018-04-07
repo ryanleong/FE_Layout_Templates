@@ -79,7 +79,7 @@ label {
 				margin-left: 0;
 			}
 
-			@media #{$sm} {
+			@include media-breakpoint-up(sm) {
 				width: calc(50% - 17.5px);
 				margin-right: 17.5px;
 

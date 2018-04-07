@@ -8,11 +8,11 @@
 // Resets
 @import '../../vendors/reset-css/_reset.scss';
 
-// Bootstrap grid
-@import '../../vendors/bootstrap/scss/_functions'; // Create new variable files when custom is needed
-@import '../../vendors/bootstrap/scss/_variables'; // Create new variable files when custom is needed
-@import '../../vendors/bootstrap/scss/_mixins';
-@import '../../vendors/bootstrap/scss/_grid';
+// Bootstrap grid with breakpoints
+@import '../../vendors/bootstrap/scss/bootstrap-grid';
+
+// Bootstrap breakpoints only
+// @import '../../vendors/bootstrap/scss/mixins/breakpoints';
 
 @import 'normalize';
 @import 'animate';

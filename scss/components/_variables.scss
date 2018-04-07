@@ -10,16 +10,10 @@ $base-font-color : '#000';
 $base-bg-color: '#17151d';
 
 
-// Responsive first media queries
-$xxxs: '(min-width: 320px)';
-$xxs: '(min-width: 375px)';
-$xs: '(min-width: 480px)';
-$sm: '(min-width: 768px)';
-$md: '(min-width: 992px)';
-$lg: '(min-width: 1200px)';
-$xl: '(min-width: 1440px)';
-$xxl: '(min-width: 1920px)';
+// Bootstrap 4 Responsive first media queries included in libraries
+// Documentation: https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints
 
+// Retina media query
 $retina: 'all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5)';
 
 
