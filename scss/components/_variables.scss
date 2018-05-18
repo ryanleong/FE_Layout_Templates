@@ -9,19 +9,23 @@ $base-font-size : 16;
 $base-font-color : '#000';
 $base-bg-color: '#17151d';
 
-
-// Bootstrap 4 Responsive first media queries included in libraries
-// Documentation: https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints
-
-// Retina media query
-$retina: 'all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5)';
-
-
-
 // Button color
-$btn-color: '#d2c4ba';
-$btn-border-color: '#d2c4ba';
+$btn-color: '#c5161e';
+$btn-text-color: '#fff';
+$btn-border-color: '#c5161e';
 
 
-// Select
-$select-bg-color: '#e1e1e1';
+/////////////////////////////////////////////
+// Form
+/////////////////////////////////////////////
+// Form field column spacing
+$form-field-col-spacing: 5px;
+
+// Form field input border color
+$form-field-border-color: #ccc;
+
+// Form field input border focus color
+$form-field-border-focus-color: #c5161e;
+
+// Form field placeholder color
+$form-field-placeholder-color: #000;

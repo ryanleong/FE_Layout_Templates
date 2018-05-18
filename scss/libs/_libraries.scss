@@ -9,11 +9,13 @@
 @import '../../vendors/reset-css/_reset.scss';
 
 // Bootstrap grid with breakpoints
-@import '../../vendors/bootstrap/scss/bootstrap-grid';
+// @import '../../vendors/bootstrap/scss/bootstrap-grid';
 
 // Bootstrap breakpoints only
 // @import '../../vendors/bootstrap/scss/mixins/breakpoints';
 
 @import 'normalize';
 @import 'animate';
+@import 'lightbox';
+
 // @import 'loading-animation';
