@@ -21,7 +21,7 @@
  *	'.lightboxID', '.openButton'
  */
 
-Lightbox = function ( lightboxID, openButton ) {
+Lightbox = function () {
 	/**
 	 * Varaiables
 	 */
@@ -30,81 +30,98 @@ Lightbox = function ( lightboxID, openButton ) {
 	var onOpenCallback = function() {};
 	var onCloseCallback = function() {};
 
-
 	/**
 	 * Initilize
 	 * @param  {String} lightboxID ID of lightbox
 	 * @param  {String} openButton Class/ID of lightbox
 	 * @return {none}
 	 */
-	var init = function( lightboxID, openButton ) {
-		if (typeof lightboxID === 'undefined' || typeof openButton === 'undefined') {
+	function init( lightboxID, openButton ) {
+		if (typeof lightboxID === 'undefined' || 
+			typeof openButton === 'undefined') {
 			return;
 		}
+		
 		// Set on click event
 		$openButton = $(openButton);
-		$lightbox = $(lightboxID + '.lightbox');
+		$lightbox = $(lightboxID);
 
 		createOpenListener();
 		createCloseListener();
-	};
-	init(lightboxID, openButton);
-
-	/**
-	 * Reinitialize Lightbox
-	 * @return {[type]} [description]
-	 */
-	var refresh = function() {
-		$openButton.off('click');
-		$lightbox.find('#close').off('click');
-
-		createOpenListener();
-		createCloseListener();
-	};
-
-	/**
-	 * Set on open callback
-	 * @param {Function} callback Callback on open
-	 */
-	var setOnOpenCallback = function( callback ) {
-		onOpenCallback = callback;
-	};
-
-	/**
-	 * Set on close callback
-	 * @param {Function} callback Callback on close
-	 */
-	var setOnCloseCallBack = function( callback ) {
-		onCloseCallback = callback;
-	};
+	}
 
 	/**
 	 * Create open listener
 	 * @return {[type]} [description]
 	 */
-	var createOpenListener = function() {
+	function createOpenListener() {
 		$openButton.click(function() {
 			onOpenCallback($(this));
 
 			$('body').addClass('no-scroll');
 			$lightbox.fadeIn();
 		});
-	};
+	}
 
 	/**
 	 * Create close listener
 	 * @return {[type]} [description]
 	 */
-	var createCloseListener = function() {
+	function createCloseListener() {
 		$lightbox.find('#close').click(function() {
 			onCloseCallback();
 			
 			$('body').removeClass('no-scroll');
 			$lightbox.fadeOut();
 		});
-	};
+	}
+
+	/**
+	 * Destroy close listener
+	 * @return {[type]} [description]
+	 */
+	function destroyOpenListener() {
+		$openButton.off('click');
+	}
+
+	/**
+	 * Destroy close listener
+	 * @return {[type]} [description]
+	 */
+	function destroyCloseListener() {
+		$lightbox.find('#close').off('click');
+	}
 
 
+	/**
+	 * Set on open callback
+	 * @param {Function} callback Callback on open
+	 */
+	function setOnOpenCallback( callback ) {
+		onOpenCallback = callback;
+	}
+
+	/**
+	 * Set on close callback
+	 * @param {Function} callback Callback on close
+	 */
+	function setOnCloseCallBack( callback ) {
+		onCloseCallback = callback;
+	}
+
+
+	/**
+	 * Reinitialize Lightbox
+	 * @return {[type]} [description]
+	 */
+	function refresh() {
+		destroyOpenListener();
+		destroyCloseListener();
+
+		createOpenListener();
+		createCloseListener();
+	}
+	
 
 	/**
 	 * Return public functions
@@ -113,7 +130,7 @@ Lightbox = function ( lightboxID, openButton ) {
 		init: init,
 		refresh: refresh,
 		setOnOpenCallback: setOnOpenCallback,
-		setOnCloseCallBack: setOnCloseCallBack
+		setOnCloseCallBack: setOnCloseCallBack,
 	};
 
 };
