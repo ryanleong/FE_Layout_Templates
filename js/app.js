@@ -1,5 +1,5 @@
 //@prepros-prepend libs/_EventHandler.js
-//@prepros-prepend libs/_OnResize.js
+//prepros-prepend libs/_OnResize.js
 
 //@prepros-prepend components/Section1Component.js
 

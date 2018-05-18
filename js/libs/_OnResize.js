@@ -13,14 +13,18 @@
  * - destroy()
  *
  * 
- * Default arguments
+ * Usage
  * =====================
  * 
- *	function callback() {}
+ *	EventHandler.on('onScreenResize', function() {
+ *		if ($( window ).width() >= 768) {
+ *			// Code to run on resize
+ *		}
+ *	});
  *
  */
 
-OnResize = function ( callbackFunction ) {
+OnResize = (function() {
 	/**
 	 * Varaiables
 	 */
@@ -29,17 +33,11 @@ OnResize = function ( callbackFunction ) {
 	var timeout = false;
 	var delta = 200;
 
-	var callBack;
 
 	/**
 	 * Initilize code
 	 */
-	function init( callbackFunction ) {
-		if (typeof callbackFunction === 'undefined') {
-			return;
-		}
-
-		callback = callbackFunction;
+	function init() {
 
 		$(window).on('resize', function() {
 			rtime = new Date();
@@ -47,13 +45,12 @@ OnResize = function ( callbackFunction ) {
 			if (timeout === false) {
 				timeout = true;
 
-				// console.log('here');
-
 				setTimeout(_onResizeCallBack, delta);
 			}
 		});
+
 	}
-	init(callbackFunction);
+	init();
 
 
 	/**
@@ -66,28 +63,11 @@ OnResize = function ( callbackFunction ) {
 		} else {
 			timeout = false;
 
-			// Create your onResize() function
 			try {
-				callback();
+				EventHandler.emit('onScreenResize', false);   
 			}
 			catch(e) {}
 		}
-	}
-
-	/**
-	 * Cache DOM elements before running
-	 * @return {[type]} [description]
-	 */
-	function _cacheDom() {
-
-	}
-
-	/**
-	 * Output changes to DOM element
-	 * @return {[type]} [description]
-	 */
-	function _render() {
-
 	}
 
 	/**
@@ -97,6 +77,7 @@ OnResize = function ( callbackFunction ) {
 	function destroy() {
 		$(window).off('resize');
 	}
+	EventHandler.on('destroyOnResizeListener', destroy);
 
 	/**
 	 * Return public functions
@@ -106,4 +87,4 @@ OnResize = function ( callbackFunction ) {
 		destroy: destroy
 	};
 
-};
+})();
