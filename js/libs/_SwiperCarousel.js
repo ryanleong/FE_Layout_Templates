@@ -35,7 +35,7 @@
  *	}
  */
 
-SwiperCarousel = function (options) {
+SwiperCarousel = function() {
 	/**
 	 * Initilize code
 	 */
@@ -50,7 +50,6 @@ SwiperCarousel = function (options) {
 	function init( options ) {
 		setArgs( options );
 	}
-	init( options );
 
 
 	/**

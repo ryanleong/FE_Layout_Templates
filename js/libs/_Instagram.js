@@ -26,7 +26,7 @@
  *	}
  */
 
-Instagram = function ( options ) {
+Instagram = function ( ) {
 	/**
 	 * Varaiables
 	 */
@@ -42,7 +42,6 @@ Instagram = function ( options ) {
 		_cacheDom();
 		_render();
 	}
-	init(options);
 
 	/**
 	 * Set options
